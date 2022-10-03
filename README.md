@@ -7,23 +7,23 @@ theme: THEME-NAME
 
 TEST tool : `jest`  `postman`
 
-front-end： `React js` 
+Frontend： `React js`
 
-backend： `Node.js`
+Backend： `Node.js`
 
-database(not decided yet)： `MongoDB/MySQL`(or other relational database)
+Database(not decided yet)： `MongoDB/MySQL`(or other relational database)
 
-deployment: Heroku. 
+Deployment: Heroku.
 
 # 2. Workflow of authentication
 
 ## 2.1 Some library we might use in the signup workflow
 
 1. `jsonwebtoken`
-    
-     reason:  
-    
-    1. Authorization: We want the user who is signed in to access the service on our website.   
+
+     reason:
+
+    1. Authorization: We want the user who is signed in to access the service on our website.
     2. `FAQ`
         How to check if the user is logged in ?
             - if json web token is included in user’s request which is sent from the front-side.
@@ -32,7 +32,7 @@ deployment: Heroku.
             - The image below illustrates it.  The `register` controller on the `nodejs`  will sending response back to the client side.  In the `reactjs` , we could add the token we got from the controller into the localstorage of the browser.  When react.js make axios request to the backend, it can get json web token from the localstorage and add it into the request.
             - To know more information about where to store json web token. Here is a link to a website
             - [https://stackoverflow.com/questions/48712923/where-to-store-a-jwt-token-properly-and-safely-in-a-web-based-application]      (https://stackoverflow.com/questions/48712923/where-to-store-a-jwt-token-properly-and-safely-in-a-web-based-application)
-    
+
 
 2. `bcryptjs`
 
@@ -40,7 +40,7 @@ deployment: Heroku.
 Link to the library : https://www.npmjs.com/package/bcryptjs
 ```
 - `FAQ`
-   - Why do we need to use this library 
+   - Why do we need to use this library
     -  For security.
     - `bcryptjs`  could help us encrypt the user’s important information before we store it into the database. For example, we could encrypt the user’s password in the `register` controller and store them into the database.
 
@@ -51,12 +51,12 @@ Link to the library : https://www.npmjs.com/package/bcryptjs
 ```yaml
 Link to this library: https://www.npmjs.com/package/axios
 ```
-    - Why do we need to use this library 
+    - Why do we need to use this library
     - we need to send request from client-side (`reactjs`) to the controller on the back-end(`nodejs`) of the application.
 
 
 
-4. `express` - web application installed on the back-end to handle the request sent from the client-side. 
+4. `express` - web application installed on the back-end to handle the request sent from the client-side.
 
 ```yaml
 Link to this library: https://expressjs.com/
@@ -77,10 +77,10 @@ Link to this library: https://expressjs.com/
 
 6.  `dotenv`
 - Why we need this library ?
-- Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. 
+- Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 - we could store token into the env and load them directly inside our nodejs server
 - For exmaple, inside the `server.js`, I load the port number from env.
-    
+
 <!-- ![Untitled Notebook (18)-1|50x50](https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg) -->
 
 <img width="800" height = "600" src="https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg">
