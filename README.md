@@ -38,7 +38,7 @@ deployment: Heroku.
     [https://stackoverflow.com/questions/48712923/where-to-store-a-jwt-token-properly-and-safely-in-a-web-based-application](https://stackoverflow.com/questions/48712923/where-to-store-a-jwt-token-properly-and-safely-in-a-web-based-application)
     
 
-1. `bcryptjs`
+2. `bcryptjs`
 
 ```yaml
 Link to the library : https://www.npmjs.com/package/bcryptjs
@@ -52,7 +52,7 @@ Link to the library : https://www.npmjs.com/package/bcryptjs
 
 
 
-2. `axios`
+3. `axios`
 
 ```yaml
 Link to this library: https://www.npmjs.com/package/axios
@@ -64,14 +64,14 @@ Link to this library: https://www.npmjs.com/package/axios
 
 
 
-3. `express` - web application installed on the back-end to handle the request sent from the client-side. 
+4. `express` - web application installed on the back-end to handle the request sent from the client-side. 
 
 ```yaml
 Link to this library: https://expressjs.com/
 ```
 
 
-4. `nodemon`
+5. `nodemon`
 
 - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 - Why need this library ?
@@ -81,7 +81,7 @@ Link to this library: https://expressjs.com/
 
 
 
-5.  `dotenv`
+6.  `dotenv`
 - Why we need this library ?
 - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. 
 - we could store token into the env and load them directly inside our nodejs server
