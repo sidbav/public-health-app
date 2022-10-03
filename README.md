@@ -92,4 +92,5 @@ Link to this library: https://expressjs.com/
 
 1. ```git clone```
 2. run the command ```npm install``` to install all the dependency
+3. Run the server by running the command ```npm start```. Then you could see the server will listen on port 4000.
 
