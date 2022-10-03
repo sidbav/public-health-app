@@ -89,3 +89,7 @@ Link to this library: https://expressjs.com/
 
 
 # 3. Download the code on your local machine
+
+1. ```git clone```
+2. run the command ```npm install``` to install all the dependency
+
