@@ -89,8 +89,11 @@ Link to this library: https://expressjs.com/
 
 
 # 3. Download the code on your local machine
-
+## 1. clone the repo on your local machine and install all the dependencies
 1. ```git clone```
 2. run the command ```npm install``` to install all the dependency
 3. Run the server by running the command ```npm start```. Then you could see the server will listen on port 4000.
 
+## 2. change the branch to the `dev-master`
+1. change the branch by running the `git checkout dev-master` on the terminal
+2. Don't forget to run `git pull origin master` before coding (update the latest version of the code).
