@@ -3,7 +3,7 @@
 
 # 1. Iteration 1
 
-### 1.  可以用的技术栈
+### 1.  Technical stack
 
 TEST tool : jest  postman
 
