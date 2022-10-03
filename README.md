@@ -1,3 +1,4 @@
+theme: THEME-NAME
 # csce 606 Coding Touchdown : Public Health App
 
 # 1. Iteration 1
