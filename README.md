@@ -5,13 +5,13 @@
 
 ### 1.  Technical stack
 
-TEST tool : jest  postman
+TEST tool : `jest`  `postman`
 
-前端： React js 
+front-end： `React js` 
 
-后端 ： Node.js
+backend： `Node.js`
 
-数据库： MongoDB
+database(not decided yet)： `MongoDB/MySQL`(or other relational database)
 
 deployment: Heroku. 
 
@@ -70,7 +70,9 @@ Link to this library: https://expressjs.com/
 5 `nodemon`
 
 - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
-1. `dotenv`
+
+
+6 `dotenv`
     - Why we need this library ?
     - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration![Untitled Notebook (18)-1](https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg)
 <img width="593" alt="Screen Shot 2022-10-02 at 7 05 07 PM" src="https://user-images.githubusercontent.com/34131663/193482380-05d76516-9fc0-4880-b30a-ea8a9b2cece4.png">
