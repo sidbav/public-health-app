@@ -82,6 +82,6 @@ Link to this library: https://expressjs.com/
     
 <!-- ![Untitled Notebook (18)-1|50x50](https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg) -->
 
-<img width="1000" height = "800" src="https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg">
+<img width="800" height = "600" src="https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg">
 
-<img width="1000" height = "800" src="https://user-images.githubusercontent.com/34131663/193482380-05d76516-9fc0-4880-b30a-ea8a9b2cece4.png">
+<img width="800" height = "600" src="https://user-images.githubusercontent.com/34131663/193482380-05d76516-9fc0-4880-b30a-ea8a9b2cece4.png">
