@@ -80,8 +80,8 @@ Link to this library: https://expressjs.com/
 - we could store token into the env and load them directly inside our nodejs server
 - For exmaple, inside the `server.js`, I load the port number from env.
     
-![Untitled Notebook (18)-1|50x50](https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg)
+<!-- ![Untitled Notebook (18)-1|50x50](https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg) -->
 
+<img width="400" src="https://user-images.githubusercontent.com/34131663/193482249-5aae643d-ff3d-425e-a7ac-e571a9ccbbe0.jpg">
 
-
-<img width="593" alt="Screen Shot 2022-10-02 at 7 05 07 PM" src="https://user-images.githubusercontent.com/34131663/193482380-05d76516-9fc0-4880-b30a-ea8a9b2cece4.png">
+<img width="400" src="https://user-images.githubusercontent.com/34131663/193482380-05d76516-9fc0-4880-b30a-ea8a9b2cece4.png">
