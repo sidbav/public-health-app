@@ -1,0 +1,18 @@
+
+
+#main-container {
+    place-items : center center;
+    background: #f5f5f5;
+    max-width: 1430px;
+}
+
+#register-form {
+    max-width: 430px;
+
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
