@@ -17,7 +17,8 @@ const passwordError={
   islength : false,
   upper: false,
   lower: false,
-  hasnumber: false
+  hasnumber: false,
+  matchPassword: false
 
 };
 
@@ -67,6 +68,13 @@ function Register() {
       hasnumber,
     });
     };
+    if (name === "ConfirmPassword"){
+      setnewPassWordWrong({
+        ...newPassWordWrong,
+        matchPassword: newUser.ConfirmPassword = value,
+      });
+      
+    }
   }
   return (
     <Container id = "main-container" className="d-grid h-100">
@@ -139,12 +147,11 @@ function Register() {
                 required
               />
           <Form.Text>
-              {
-                <div className="text-danger mb-3">Password doesn't match!</div>
+              { !newPassWordWrong.matchPassword &&
+                (<div className="text-danger mb-3">Password doesn't match!</div>)
               }
           </Form.Text>
-
-            <ul className="mb-4">
+            <ul className="mb-3" >
               <li className= {newPassWordWrong.islength ? "text-success" : "text-danger"}>
                 At least 6 characters
               </li>
