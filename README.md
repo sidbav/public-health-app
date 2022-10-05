@@ -1,5 +1,36 @@
 theme: THEME-NAME
+
+
+# `Common issue`
+## How do I resolve git saying "Commit your changes or stash them before you can merge"?
+Check out this link:
+https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-your-changes-or-stash-them-before-you-can-me
+
+
+\Stash it.
+Stashing acts as a stack, where you can push changes, and you pop them in reverse order.
+
+To stash, type
+test
+
+
+`git stash`
+Do the merge, and then pull the stash:
+
+`git stash pop`
+Discard the local changes
+using `git reset --hard`
+or `git checkout -t -f remote/branch`
+
+Or: Discard local changes for a specific file
+using `git checkout <filename>`
+
+
+
 # csce 606 Coding Touchdown : Public Health App
+
+
+
 
 # 1. Iteration 1
 
