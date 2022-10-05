@@ -12,19 +12,16 @@ Stashing acts as a stack, where you can push changes, and you pop them in revers
 
 To stash, type
 
-git stash
+`git stash`
 Do the merge, and then pull the stash:
 
-git stash pop
+`git stash pop`
 Discard the local changes
-using git reset --hard
-or git checkout -t -f remote/branch
+using `git reset --hard`
+or `git checkout -t -f remote/branch`
 
 Or: Discard local changes for a specific file
-using git checkout filename
-
-
-
+using `git checkout <filename>`
 
 
 
