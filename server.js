@@ -17,8 +17,6 @@ const port = process.env.PORT || 5001
 
 const start = async () => {
     await connectDB(process.env.MONGO_URL);
-
-
 }
 
 app.listen(port , ()=>{

@@ -24,13 +24,21 @@ const UserSchema = new mongoose.Schema({
     firstName: {
         type: String,
         require: true,
-    },
-    dateOfBirth: {
-        type: Date,
-        required: true,
-        trim: true
-    }
 
+    }
+    // dateOfBirth: {
+    //     type: Date,
+    //     required: true,
+    //     trim: true
+    // }
+
+},
+{
+    toJSON:{
+        transform (doc,ret){
+            delete ret.__v
+        }
+    }
 })
 
 export default mongoose.model('User',UserSchema);
