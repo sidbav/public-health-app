@@ -1,5 +1,21 @@
 theme: THEME-NAME
+
+
+# Common issue"
+## How do I resolve git saying "Commit your changes or stash them before you can merge"?
+Check out this link:
+https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-your-changes-or-stash-them-before-you-can-me
+
+
+
+
+
+
+
 # csce 606 Coding Touchdown : Public Health App
+
+
+
 
 # 1. Iteration 1
 
