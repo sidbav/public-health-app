@@ -12,9 +12,21 @@ const initialState = {
   Birth: new Date(),
   password:"",
   ConfirmPassword:""
-}
+};
+const passwordError={
+  islength : false,
+  upper: false,
+  lower: false,
+  hasnumber: false
+
+};
+
+
 function Register() {
   const [newUser, setNewUser] = useState(initialState);
+
+  const [newPassWordWrong, setnewPassWordWrong] = useState(passwordError);
+
   useEffect(() => {}, [newUser]);
 
  const handleonSubmit = (e) =>{
@@ -41,6 +53,20 @@ function Register() {
     const { name, value } = e.target;
 
     setNewUser({ ...newUser, [name]: value });
+    if (name === "password") {
+     const islength = value.length> 6;
+     const upper = /[A-Z]/.test(value);
+     const lower = /[a-z]/.test(value);
+     const hasnumber = /[0-9]/.test(value);
+
+     setnewPassWordWrong({
+      ...newPassWordWrong,
+      islength,
+      upper,
+      lower,
+      hasnumber,
+    });
+    };
   }
   return (
     <Container id = "main-container" className="d-grid h-100">
@@ -112,8 +138,28 @@ function Register() {
                 placeholder="Confirm Password"
                 required
               />
+          <Form.Text>
+              {
+                <div className="text-danger mb-3">Password doesn't match!</div>
+              }
+          </Form.Text>
+
+            <ul className="mb-4">
+              <li className= {newPassWordWrong.islength ? "text-success" : "text-danger"}>
+                At least 6 characters
+              </li>
+              <li className= {newPassWordWrong.upper ? "text-success" : "text-danger"}>
+                At least one upper case
+              </li>
+              <li className= {newPassWordWrong.lower ? "text-success" : "text-danger"}>
+                At least one lower case
+              </li>
+              <li className= {newPassWordWrong.hasnumber ? "text-success" : "text-danger"}>
+                At least one number
+              </li>
+            </ul>
           </Form.Group>
-          <Button variant="primary" type="submit" className="w-100">
+          <Button variant="primary" type="submit" className="w-100" disabled={Object.values(newPassWordWrong).includes(false)}>
             Sign up
           </Button>
       </Form>
