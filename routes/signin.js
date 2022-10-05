@@ -11,6 +11,7 @@ dotenv.config()
 const router = express.Router();
 router.post('/api/v1/auth/login', async (req,res)=>{
     res.status(201).send("howdy");
+    console.log("here");
 })
 
 
