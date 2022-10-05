@@ -11,6 +11,8 @@ https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-
 Stashing acts as a stack, where you can push changes, and you pop them in reverse order.
 
 To stash, type
+test
+
 
 `git stash`
 Do the merge, and then pull the stash:
