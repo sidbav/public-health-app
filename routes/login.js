@@ -21,6 +21,6 @@ router.post('/api/v1/auth/login', async (req,res)=>{
 })
 
 
-export {router as signInRouter}
+export {router as LoginRouter}
 
 // setup the router
