@@ -3,7 +3,7 @@ import request from 'supertest'
 import { app } from "../../app.js";
 
 
-it('responds with details about the current user' ,async () => {
+it('successfully signup' ,async () => {
     return request(app)
     .post('/api/v1/auth/signup')
     .send({
@@ -14,8 +14,6 @@ it('responds with details about the current user' ,async () => {
          "phoneNumber":"12345",
          "dob" : "2019-07-04T13:33:03.969Z"
     }).expect(201);
-
-
 })
 
 // test for invalid email
