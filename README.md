@@ -54,6 +54,7 @@ Deployment: Heroku.
 
      reason:
 
+
     1. Authorization: We want the user who is signed in to access the service on our website.
     2. `FAQ`
         How to check if the user is logged in ?
@@ -128,3 +129,6 @@ Link to this library: https://expressjs.com/
 ## 2. change the branch to the `dev-master`
 1. change the branch by running the `git checkout dev-master` on the terminal
 2. Don't forget to run `git pull origin master` before coding (update the latest version of the code).
+
+
+[git workflow.pdf](https://github.com/Patrickyyh/public-health-app/files/9720480/git.workflow.pdf)
