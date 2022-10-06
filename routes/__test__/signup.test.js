@@ -3,7 +3,7 @@ import request from 'supertest'
 import { app } from "../../app.js";
 
 
-it('responds with details about the current user' ,async () => {
+it('successfully signup' ,async () => {
     return request(app)
     .post('/api/v1/auth/signup')
     .send({
