@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Registerpage.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
+import { Link  , useNavigate} from "react-router-dom";
 import axios from 'axios';
 
 
@@ -15,7 +15,8 @@ const initialState = {
   Birth: new Date(),
   password:"",
   ConfirmPassword:"",
-  phoneNumber:""
+  phoneNumber:"",
+  isMember: true,
 };
 const passwordError={
   islength : false,
@@ -29,10 +30,17 @@ const passwordError={
 
 const Register = ()=>  {
   const [newUser, setNewUser] = useState(initialState);
-
   const [newPassWordWrong, setnewPassWordWrong] = useState(passwordError);
+  const navigate = useNavigate();
 
   useEffect(() => {}, [newUser]);
+
+
+  // click this button to change the the login and signup page
+const toggleMember = ()=>{
+    setNewUser({...newUser, isMember: !newUser.isMember});
+}
+
 
  const handleonSubmit = async (e) =>{
     e.preventDefault();
@@ -51,16 +59,12 @@ const Register = ()=>  {
         })
 
       const {user} = response.data;
-      console.log(user)
+      console.log(user);
+      navigate('/landing');
 
     } catch (error) {
         console.log(error.response.data.msg)
     }
-
-
-
-
-
         /*api.register(
       {
       firstName: newUser.FirstName,
@@ -109,41 +113,57 @@ const Register = ()=>  {
   return (
     <Container id = "main-container" className="d-grid h-100">
       <Form id="register-form"  className="mt-4" onSubmit={handleonSubmit}>
-        <h1 className="mb-3  fw-normal text-center">Please Sign Up</h1>
+        <h1 className="mb-3  fw-normal text-center">
+          {newUser.isMember? "Please Login in" : "Please Sign Up"}
+        </h1>
         <hr />
-        <Form.Group className="mb-3">
-              <Form.Label>Your First Name</Form.Label>
-              <Form.Control
-                type="firstName"
-                name="firstName"
-                value={newUser.firstName}
-                onChange={handleOnChange}
-                placeholder="First Name"
-                required
-              />
-          </Form.Group>
+        {
+           !newUser.isMember
+           &&
           <Form.Group className="mb-3">
-              <Form.Label>Your Last Name</Form.Label>
-              <Form.Control
-                type="lastName"
-                name="lastName"
-                value={newUser.lastName}
-                onChange={handleOnChange}
-                placeholder="Last Name"
-                required
-              />
+                <Form.Label>Your First Name</Form.Label>
+                <Form.Control
+                  type="firstName"
+                  name="firstName"
+                  value={newUser.firstName}
+                  onChange={handleOnChange}
+                  placeholder="First Name"
+                  required
+                />
+            </Form.Group>
+          }
+
+          {
+            !newUser.isMember &&
+            <Form.Group className="mb-3">
+                <Form.Label>Your Last Name</Form.Label>
+                <Form.Control
+                  type="lastName"
+                  name="lastName"
+                  value={newUser.lastName}
+                  onChange={handleOnChange}
+                  placeholder="Last Name"
+                  required
+                />
           </Form.Group>
-          <Form.Group className="mb-3">
-              <Form.Label>Your Phone Number</Form.Label>
-              <Form.Control
-                type="phoneNumber"
-                name="phoneNumber"
-                value={newUser.phoneNumber}
-                onChange={handleOnChange}
-                placeholder="Phone Number"
-                required
-              />
-          </Form.Group>
+          }
+          {
+            !newUser.isMember &&
+            <Form.Group className="mb-3">
+
+
+                <Form.Label>Your Phone Number</Form.Label>
+                <Form.Control
+                  type="phoneNumber"
+                  name="phoneNumber"
+                  value={newUser.phoneNumber}
+                  onChange={handleOnChange}
+                  placeholder="Phone Number"
+                  required
+                />
+            </Form.Group>
+
+          }
           <Form.Group className="mb-3">
               <Form.Label>Your Email</Form.Label>
               <Form.Control
@@ -155,6 +175,9 @@ const Register = ()=>  {
                 required
               />
           </Form.Group>
+
+        {
+          !newUser.isMember &&
           <Form.Group className="mb-3">
               <Form.Label>Your Date of Birth</Form.Label>
               <Form.Control
@@ -166,6 +189,8 @@ const Register = ()=>  {
                 required
               />
           </Form.Group>
+         }
+
           <Form.Group className="mb-3">
               <Form.Label>Your Password</Form.Label>
               <Form.Control
@@ -177,6 +202,9 @@ const Register = ()=>  {
                 required
               />
           </Form.Group>
+
+        {
+          !newUser.isMember &&
           <Form.Group className="mb-3">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
@@ -219,13 +247,22 @@ const Register = ()=>  {
               </li>
             </ul>
           </Form.Group>
+          }
           <Button variant="primary" type="submit" className="w-100" disabled={Object.values(newPassWordWrong).includes(false)}>
-            Sign up
+            {!newUser.isMember? "Sign up": "Log in" }
           </Button>
       </Form>
       <div className="d-flex justify-content-center align-items-center ">
                   <span className="fw-normal">
-                    Already have an account? <Link>Login</Link>
+                    {newUser.isMember? "Not a member yet ?": "Already a member ?"}
+                    <button type = "button"
+                      onClick={toggleMember}
+                      className = "member-btn"
+                    >
+                      {newUser.isMember? 'Register' : 'Login'}
+
+                    </button>
+                    {/* Already have an account? <Link>Login</Link> */}
                   </span>
         </div>
 
