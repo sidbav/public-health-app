@@ -23,13 +23,18 @@ const UserSchema = new mongoose.Schema({
     firstName: {
         type: String,
         require: true,
+    },
 
+    dob: {
+        type: Date,
+        required: true,
+        trim: true
+    },
+
+    phoneNumber: {
+        type: String,
+        requried: true
     }
-    // dateOfBirth: {
-    //     type: Date,
-    //     required: true,
-    //     trim: true
-    // }
 
 },
 {
