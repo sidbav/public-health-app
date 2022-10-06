@@ -45,25 +45,34 @@ const toggleMember = ()=>{
  const handleonSubmit = async (e) =>{
     e.preventDefault();
     // console.log(newUser);
-    const{ firstName, lastName, Birth, password, email , phoneNumber} = newUser
+
+    const{ firstName, lastName, Birth, password, email , phoneNumber,isMember} = newUser
     const dob = Birth;
+    if (!isMember){
+       // register request overhere
+        try {
+            const response = await axios.post('/api/v1/auth/signup',{
+              firstName,
+              lastName,
+              dob,
+              password,
+              email ,
+              phoneNumber,
+            })
 
-    try {
-        const response = await axios.post('/api/v1/auth/signup',{
-          firstName,
-          lastName,
-          dob,
-          password,
-          email ,
-          phoneNumber,
-        })
+          const {user} = response.data;
+          console.log(user);
+          navigate('/landing');
 
-      const {user} = response.data;
-      console.log(user);
-      navigate('/landing');
+        } catch (error) {
+            console.log(error.response.data.msg)
+        }
+    }else{
 
-    } catch (error) {
-        console.log(error.response.data.msg)
+        //login request overhere
+
+
+
     }
         /*api.register(
       {
