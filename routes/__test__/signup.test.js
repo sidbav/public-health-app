@@ -14,8 +14,6 @@ it('successfully signup' ,async () => {
          "phoneNumber":"12345",
          "dob" : "2019-07-04T13:33:03.969Z"
     }).expect(201);
-
-
 })
 
 // test for invalid email

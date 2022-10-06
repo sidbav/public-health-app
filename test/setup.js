@@ -9,6 +9,7 @@ let mongo
 
 // run this following code before each test's run
 beforeAll( async () => {
+    // mock the database
     const mongo = MongoMemoryServer.create()
     const mongoUri = await(await (mongo)).getUri();
     await mongoose.connect(mongoUri, {});
@@ -30,7 +31,7 @@ beforeEach( async ()=>{
 
 // run after every test finished
 afterAll(async () => {
-    
+
     await mongoose.connection.close();
     if (mongo) {
       await mongo.stop();

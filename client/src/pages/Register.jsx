@@ -61,7 +61,8 @@ const toggleMember = ()=>{
 
           const {user} = response.data;
           console.log(user);
-          navigate('/landing');
+          setNewUser({...newUser, isMember: !newUser.isMember})
+          //navigate('/landing');
 
         } catch (error) {
             console.log(error.response.data.msg)
@@ -69,6 +70,8 @@ const toggleMember = ()=>{
     }else{
 
         //login request overhere
+
+        //
 
 
 

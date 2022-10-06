@@ -13,8 +13,6 @@ router.post('/api/v1/auth/login', async (req,res)=>{
 
 
     const {email, password, lastName, firstName} = req.body
-
-
     const user = await User.create({ email, password, lastName, firstName});
     await user.save()
 
