@@ -4,7 +4,8 @@ import express from 'express'
 import User from '../models/User.js'
 import dotenv from 'dotenv'
 dotenv.config()
-
+import validator from 'validator'
+import ValidationError from '../errors/validation-error.js'
 // controller for sign up
 const router = express.Router();
 router.post('/api/v1/auth/signup', async (req,res)=>{
@@ -17,11 +18,31 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
      * else create new user and add info to database
     */
 
+    if(!email || !password ||  !lastName || !firstName || !phoneNumber || !dob){
+        throw new ValidationError('Please provide all values');
+    }
+
+    // check the format of the email
+    if (!validator.isEmail(email)){
+        throw new ValidationError("not an email ")
+    }
+
+
+
+    // Check if the user already exist
+    const userExisted = await User.findOne({email});
+    if (userExisted){
+        throw new ValidationError('Email already in User');
+    }
+
+
+
     //adding to database
     const user = await User.create({ email, password, lastName, firstName, phoneNumber, dob} );
+
     await user.save()
 
-    res.status(201).send( {email, password, lastName, firstName, phoneNumber, dob});
+    res.status(201).send({user});
     console.log("here");
 })
 
