@@ -5,13 +5,17 @@ import Button from "react-bootstrap/Button";
 import "./Registerpage.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
+
 const initialState = {
-  FirstName :"",
-  LastName: "",
-  Email:"",
+  firstName :"",
+  lastName: "",
+  email:"",
   Birth: new Date(),
   password:"",
-  ConfirmPassword:""
+  ConfirmPassword:"",
+  phoneNumber:""
 };
 const passwordError={
   islength : false,
@@ -30,9 +34,33 @@ const Register = ()=>  {
 
   useEffect(() => {}, [newUser]);
 
- const handleonSubmit = (e) =>{
+ const handleonSubmit = async (e) =>{
     e.preventDefault();
-    console.log(newUser);
+    // console.log(newUser);
+    const{ firstName, lastName, Birth, password, email , phoneNumber} = newUser
+    const dob = Birth;
+
+    try {
+        const response = await axios.post('/api/v1/auth/signup',{
+          firstName,
+          lastName,
+          dob,
+          password,
+          email ,
+          phoneNumber,
+        })
+
+      const {user} = response.data;
+      console.log(user)
+
+    } catch (error) {
+        console.log(error.response.data.msg)
+    }
+
+
+
+
+
         /*api.register(
       {
       firstName: newUser.FirstName,
@@ -86,9 +114,9 @@ const Register = ()=>  {
         <Form.Group className="mb-3">
               <Form.Label>Your First Name</Form.Label>
               <Form.Control
-                type="FirstName"
-                name="FirstName"
-                value={newUser.FirstName}
+                type="firstName"
+                name="firstName"
+                value={newUser.firstName}
                 onChange={handleOnChange}
                 placeholder="First Name"
                 required
@@ -97,11 +125,22 @@ const Register = ()=>  {
           <Form.Group className="mb-3">
               <Form.Label>Your Last Name</Form.Label>
               <Form.Control
-                type="LastName"
-                name="LastName"
-                value={newUser.LastName}
+                type="lastName"
+                name="lastName"
+                value={newUser.lastName}
                 onChange={handleOnChange}
                 placeholder="Last Name"
+                required
+              />
+          </Form.Group>
+          <Form.Group className="mb-3">
+              <Form.Label>Your Phone Number</Form.Label>
+              <Form.Control
+                type="phoneNumber"
+                name="phoneNumber"
+                value={newUser.phoneNumber}
+                onChange={handleOnChange}
+                placeholder="Phone Number"
                 required
               />
           </Form.Group>
@@ -109,8 +148,8 @@ const Register = ()=>  {
               <Form.Label>Your Email</Form.Label>
               <Form.Control
                 type="Email"
-                name="Email"
-                value={newUser.Email}
+                name="email"
+                value={newUser.email}
                 onChange={handleOnChange}
                 placeholder="Email"
                 required
