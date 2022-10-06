@@ -248,7 +248,7 @@ const toggleMember = ()=>{
             </ul>
           </Form.Group>
           }
-          <Button variant="primary" type="submit" className="w-100" disabled={Object.values(newPassWordWrong).includes(false)}>
+          <Button variant="primary" type="submit" className="w-100" disabled={(Object.values(newPassWordWrong).includes(false))&&!newUser.isMember}>
             {!newUser.isMember? "Sign up": "Log in" }
           </Button>
       </Form>
