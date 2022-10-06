@@ -23,7 +23,7 @@ const passwordError={
 };
 
 
-function Register() {
+const Register = ()=>  {
   const [newUser, setNewUser] = useState(initialState);
 
   const [newPassWordWrong, setnewPassWordWrong] = useState(passwordError);
