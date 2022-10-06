@@ -130,5 +130,7 @@ Link to this library: https://expressjs.com/
 1. change the branch by running the `git checkout dev-master` on the terminal
 2. Don't forget to run `git pull origin master` before coding (update the latest version of the code).
 
+![git workflow](https://user-images.githubusercontent.com/90015500/194197185-7d72bad9-4b6b-403e-9381-54447f574d5e.jpg)
 
-[git workflow.pdf](https://github.com/Patrickyyh/public-health-app/files/9720480/git.workflow.pdf)
+
+
