@@ -2,11 +2,7 @@ import { response } from "express";
 import request from 'supertest'
 import { app } from "../../app.js";
 
-// describe('here', ()=>{
-//     test('efe' , ()=>{
 
-//     })
-// })
 it('responds with details about the current user' ,async () => {
     return request(app)
     .post('/api/v1/auth/signup')
@@ -28,7 +24,7 @@ it('returns a 400 with an invalid email',async () => {
     return request(app)
     .post('/api/v1/auth/signup')
     .send({
-        "email":"yeyu23233@gmail.com",
+        "email":"yeyu232gmail.com",
         "password":"comeesfefefes",
         "lastName" : "haa",
          "firstName" : "hha",
@@ -37,3 +33,32 @@ it('returns a 400 with an invalid email',async () => {
     })
     .expect(400);
 })
+
+
+// if user has already existed in our database
+it('check if user has already signup before', async ()=>{
+    await request(app)
+    .post('/api/v1/auth/signup')
+    .send({
+        "email":"yeyu232@gmail.com",
+        "password":"comeesfefefes",
+        "lastName" : "haa",
+         "firstName" : "hha",
+         "phoneNumber":"12345",
+         "dob" : "2019-07-04T13:33:03.969Z"
+    }).expect(201)
+
+    await request(app)
+    .post('/api/v1/auth/signup')
+    .send({
+        "email":"yeyu232@gmail.com",
+        "password":"comeesfefefes",
+        "lastName" : "haa",
+         "firstName" : "hha",
+         "phoneNumber":"12345",
+         "dob" : "2019-07-04T13:33:03.969Z"
+    }).expect(400)
+
+
+})
+
