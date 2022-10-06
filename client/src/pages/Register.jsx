@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Registerpage.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link  , useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 
 
@@ -22,7 +22,6 @@ const passwordError={
   islength : false,
   upper: false,
   lower: false,
-  hasnumber: false,
   matchPassword: false,
   hasnumber: false
 };
@@ -107,13 +106,14 @@ const toggleMember = ()=>{
       upper,
       lower,
       hasnumber,
+      matchPassword: newUser.ConfirmPassword === value,
     });
     };
 
     if (name === "ConfirmPassword"){
       setnewPassWordWrong({
         ...newPassWordWrong,
-        matchPassword: newUser.ConfirmPassword = value,
+        matchPassword: newUser.password === value,
       });
 
     }
@@ -231,15 +231,6 @@ const toggleMember = ()=>{
               }
           </Form.Text>
 
-          <Form.Text>
-            <ul className="mb-3" >
-
-              {
-                <div className="text-danger mb-3">Password doesn't match!</div>
-              }
-              </ul>
-          </Form.Text>
-
             <ul className="mb-4">
 
               <li className= {newPassWordWrong.islength ? "text-success" : "text-danger"}>
@@ -257,7 +248,7 @@ const toggleMember = ()=>{
             </ul>
           </Form.Group>
           }
-          <Button variant="primary" type="submit" className="w-100" disabled={Object.values(newPassWordWrong).includes(false)}>
+          <Button variant="primary" type="submit" className="w-100" disabled={(Object.values(newPassWordWrong).includes(false))&&!newUser.isMember}>
             {!newUser.isMember? "Sign up": "Log in" }
           </Button>
       </Form>
