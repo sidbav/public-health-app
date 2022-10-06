@@ -17,13 +17,9 @@ const passwordError={
   islength : false,
   upper: false,
   lower: false,
-
   hasnumber: false,
-  matchPassword: false
-
+  matchPassword: false,
   hasnumber: false
-
-
 };
 
 
@@ -78,7 +74,7 @@ function Register() {
         ...newPassWordWrong,
         matchPassword: newUser.ConfirmPassword = value,
       });
-      
+
     }
 
   }
@@ -158,11 +154,14 @@ function Register() {
                 (<div className="text-danger mb-3">Password doesn't match!</div>)
               }
           </Form.Text>
+
+          <Form.Text>
             <ul className="mb-3" >
 
               {
                 <div className="text-danger mb-3">Password doesn't match!</div>
               }
+              </ul>
           </Form.Text>
 
             <ul className="mb-4">
