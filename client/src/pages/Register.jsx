@@ -106,13 +106,14 @@ const toggleMember = ()=>{
       upper,
       lower,
       hasnumber,
+      matchPassword: newUser.ConfirmPassword === value,
     });
     };
 
     if (name === "ConfirmPassword"){
       setnewPassWordWrong({
         ...newPassWordWrong,
-        matchPassword: newUser.ConfirmPassword = value,
+        matchPassword: newUser.password === value,
       });
 
     }
