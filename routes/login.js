@@ -41,13 +41,8 @@ router.post('/api/v1/auth/login', async (req,res)=>{
         data: userInfo
     })
 
-
-
-    const user = await User.create({ email, password});
-    await user.save()
-
     //res.status(201).send( {user});
-    console.log("here");
+
 })
 
 
