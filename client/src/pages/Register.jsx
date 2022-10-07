@@ -96,9 +96,16 @@ const toggleMember = ()=>{
 
   }
 
+  const changEmail = (e)=>{
+    newUser.hasEmail = "";
+    const { name, value } = e.target;
+    if(name === "email") {
+    setNewUser({ ...newUser, email: value });}
+}
+
   const handleOnChange = (e) =>{
     const { name, value } = e.target;
-      newUser.hasEmail = "";
+      
 
     setNewUser({ ...newUser, [name]: value });
     if (name === "password") {
@@ -188,7 +195,7 @@ const toggleMember = ()=>{
                 type="Email"
                 name="email"
                 value={newUser.email}
-                onChange={handleOnChange}
+                onChange={changEmail}
                 placeholder="Email"
                 required
               />
