@@ -35,7 +35,6 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
 
 
 
-
     //adding to database
     const user = await User.create({ email, hashedPassword, lastName, firstName, phoneNumber, dob} );
 
