@@ -16,6 +16,7 @@ const initialState = {
   password:"",
   ConfirmPassword:"",
   phoneNumber:"",
+  hasEmail: "",
   isMember: true,
 };
 const passwordError={
@@ -66,6 +67,7 @@ const toggleMember = ()=>{
           //navigate('/landing');
 
         } catch (error) {
+          setNewUser({...newUser, hasEmail: error.response.data.msg})
             console.log(error.response.data.msg)
         }
     }else{
@@ -96,6 +98,7 @@ const toggleMember = ()=>{
 
   const handleOnChange = (e) =>{
     const { name, value } = e.target;
+      newUser.hasEmail = "";
 
     setNewUser({ ...newUser, [name]: value });
     if (name === "password") {
@@ -190,7 +193,11 @@ const toggleMember = ()=>{
                 required
               />
           </Form.Group>
-
+          {
+          newUser.hasEmail && <li className= { " mb-3 text-danger"}>
+            {newUser.hasEmail}
+              </li>
+              }
         {
           !newUser.isMember &&
           <Form.Group className="mb-3">
