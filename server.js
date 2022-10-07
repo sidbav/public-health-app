@@ -6,6 +6,7 @@ import cors from 'cors'
 app.use(cors())
 //
 import {app} from './app.js'
+import path from 'path'
 
 //dotenv config
 dotenv.config();
