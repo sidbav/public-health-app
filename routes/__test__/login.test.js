@@ -18,6 +18,15 @@ it('successfully Login' ,async () => {
     }).expect(201);
 
 
+    //  test for invalid email
+    // await request(app)
+    // .post('/api/v1/auth/login')
+    // .send({
+    //     "email":"asdasasdasd.com",
+    //     "password":"asdasdaad",
+    // }).expect(400);
+
+
     // login
     await request(app)
     .post('/api/v1/auth/login')
@@ -25,9 +34,8 @@ it('successfully Login' ,async () => {
         "email":"yeyu23233@gmail.com",
         "password":"comeesfefefes",
     }).expect(201);
+
 })
-
-
 it('login with incorrect password', async()=> {
     await request(app)
     .post('/api/v1/auth/signup')
@@ -47,10 +55,7 @@ it('login with incorrect password', async()=> {
     .send({
         "email":"yeyu23233@gmail.com",
         "password":"comeesf",
-    }).expect(StatusCodes.UNAUTHORIZED);
+    }).expect(400);
 
 
 })
-
-
-

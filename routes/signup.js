@@ -12,25 +12,25 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
 
     const {email, password, lastName, firstName, phoneNumber, dob} = req.body
 
-    //check database for availability
-    /**
-     * if already exists, throw error and message "account already exists"
-     * else create new user and add info to database
+    /*
+      check database for availability
+      if already exists, throw error and message "account already exists"
+      else create new user and add info to database
     */
 
-    if(!email || !password ||  !lastName || !firstName || !phoneNumber || !dob){
+    if (!email || !password ||  !lastName || !firstName || !phoneNumber || !dob) {
         throw new ValidationError('Please provide all values');
     }
 
     // check the format of the email
-    if (!validator.isEmail(email)){
+    if (!validator.isEmail(email)) {
         throw new ValidationError("not an email ")
     }
 
     // Check if the user already exist
     const userExisted = await User.findOne({email});
-    if (userExisted){
-        throw new ValidationError('Email already in use');
+    if (userExisted) {
+        throw new ValidationError('Email already in User');
     }
 
     //adding to database

@@ -201,7 +201,7 @@ const toggleMember = ()=>{
               />
           </Form.Group>
           {
-          newUser.hasEmail && <li className= { " mb-3 text-danger"}>
+          !newUser.isMember &&newUser.hasEmail && <li className= { " mb-3 text-danger"}>
             {newUser.hasEmail}
               </li>
               }
