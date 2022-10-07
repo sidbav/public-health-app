@@ -16,9 +16,6 @@ app.use(SignupRouter);
 app.use(errorHandlerMiddle)
 
 //For deployment only
-app.get('*' , (req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./client/build','index.html'))
-})
 
 
 export {app}
