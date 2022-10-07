@@ -24,6 +24,8 @@ const start = async () => {
 }
 
 
+
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 app.use(express.static(path.resolve(__dirname,'./client/build')))
 app.get('*' , (req,res)=>{
