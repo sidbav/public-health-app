@@ -18,6 +18,7 @@ const initialState = {
   phoneNumber:"",
   hasEmail: "",
   isMember: true,
+  loginError: ""
 };
 const passwordError={
   islength : false,
@@ -25,7 +26,7 @@ const passwordError={
   lower: false,
   matchPassword: false,
   hasnumber: false,
-  hasSpclChr: false
+  hasSpclChr: false,
 };
 
 
@@ -63,8 +64,8 @@ const toggleMember = ()=>{
 
           const {user} = response.data;
           console.log(user);
-          setNewUser({...newUser, isMember: !newUser.isMember})
-          //navigate('/landing');
+          //setNewUser({...newUser, isMember: !newUser.isMember})
+          navigate('/landing');
 
         } catch (error) {
           setNewUser({...newUser, hasEmail: error.response.data.msg})
@@ -74,7 +75,20 @@ const toggleMember = ()=>{
 
         //login request overhere
 
-        //
+        try {
+          const response = await axios.post('/api/v1/auth/login',{
+            password,
+            email ,
+          })
+        const {user} = response.data;
+        console.log(user);
+       // setNewUser({...newUser, isMember: !newUser.isMember})
+        navigate('/landing');
+
+      } catch (error) {
+        setNewUser({...newUser, loginError: error.response.data.msg})
+          console.log(error.response.data.msg)
+      }
 
 
 
@@ -105,7 +119,7 @@ const toggleMember = ()=>{
 
   const handleOnChange = (e) =>{
     const { name, value } = e.target;
-      
+    newUser.loginError = "";
 
     setNewUser({ ...newUser, [name]: value });
     if (name === "password") {
@@ -231,7 +245,11 @@ const toggleMember = ()=>{
                 required
               />
           </Form.Group>
-
+          {
+          newUser.isMember &&newUser.loginError && <li className= { " mb-3 text-danger"}>
+            {newUser.loginError}
+              </li>
+              }
         {
           !newUser.isMember &&
           <Form.Group className="mb-3">
