@@ -36,12 +36,12 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
 
 
     //adding to database
-    const user = await User.create({ email, hashedPassword, lastName, firstName, phoneNumber, dob} );
+    const user = await User.create({ email, password, lastName, firstName, phoneNumber, dob} );
 
     await user.save()
 
     res.status(201).send({user});
-    console.log("here");
+
 })
 
 
