@@ -25,10 +25,6 @@ it('successfully Login' ,async () => {
         "email":"yeyu23233@gmail.com",
         "password":"comeesfefefes",
     }).expect(201);
-
-
-
-
 })
 
 

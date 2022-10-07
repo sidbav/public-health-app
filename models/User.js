@@ -49,4 +49,9 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
+
+//hashing the password before saved in the database
+
+
+
 export default mongoose.model('User',UserSchema);

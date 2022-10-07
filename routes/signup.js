@@ -30,7 +30,7 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
     // Check if the user already exist
     const userExisted = await User.findOne({email});
     if (userExisted){
-        throw new ValidationError('Email already in User');
+        throw new ValidationError('Email already in use');
     }
 
     //adding to database
