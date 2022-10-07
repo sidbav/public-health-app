@@ -23,7 +23,8 @@ const passwordError={
   upper: false,
   lower: false,
   matchPassword: false,
-  hasnumber: false
+  hasnumber: false,
+  hasSpclChr: false
 };
 
 
@@ -102,6 +103,7 @@ const toggleMember = ()=>{
      const upper = /[A-Z]/.test(value);
      const lower = /[a-z]/.test(value);
      const hasnumber = /[0-9]/.test(value);
+     const hasSpclChr = /[@,#,$,%,&,^,*,!]/.test(value);
 
      setnewPassWordWrong({
       ...newPassWordWrong,
@@ -109,6 +111,7 @@ const toggleMember = ()=>{
       upper,
       lower,
       hasnumber,
+      hasSpclChr,
       matchPassword: newUser.ConfirmPassword === value,
     });
     };
@@ -126,7 +129,7 @@ const toggleMember = ()=>{
     <Container id = "main-container" className="d-grid h-100">
       <Form id="register-form"  className="mt-4" onSubmit={handleonSubmit}>
         <h1 className="mb-3  fw-normal text-center">
-          {newUser.isMember? "Please Login in" : "Please Sign Up"}
+          {newUser.isMember? "Public-Health System" : "Please Sign Up"}
         </h1>
         <hr />
         {
@@ -247,6 +250,11 @@ const toggleMember = ()=>{
               </li>
               <li className= {newPassWordWrong.hasnumber ? "text-success" : "text-danger"}>
                 At least one number
+              </li>
+              <li
+                className={newPassWordWrong.hasSpclChr ? "text-success" : "text-danger"
+                }>
+                At least on of the special characters 
               </li>
             </ul>
           </Form.Group>
