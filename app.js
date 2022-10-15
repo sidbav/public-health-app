@@ -4,8 +4,8 @@ import cors from 'cors'
 
 import { errorHandlerMiddle } from './middlewares/error-handler.js'
 // import the router from the routes folder
-import { LoginRouter } from './routes/login.js'
-import { SignupRouter } from './routes/signup.js'
+import { LoginRouter } from './routes/Auth/login.js'
+import { SignupRouter } from './routes/Auth/signup.js'
 //
 // run the router
 const app = express()

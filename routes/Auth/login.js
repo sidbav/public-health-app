@@ -1,11 +1,11 @@
 
 import express from 'express'
 // import database Model
-import User from '../models/User.js'
+import User from '../../models/User.js'
 import dotenv from 'dotenv'
 dotenv.config()
 import validator from 'validator';
-import ValidationError from '../errors/validation-error.js'
+import ValidationError from '../../errors/validation-error.js'
 
 // controller for sign in
 const router = express.Router();
