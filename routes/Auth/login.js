@@ -6,6 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 import validator from 'validator';
 import ValidationError from '../../errors/validation-error.js'
+import { StatusCodes } from 'http-status-codes';
 
 // controller for sign in
 const router = express.Router();
@@ -23,8 +24,8 @@ router.post('/api/v1/auth/login', async (req,res)=>{
     }
 
     // check if user has registered
-    const userInfo = await User.findOne({email})
-    if (!userInfo) {
+    const user = await User.findOne({email})
+    if (!user) {
         throw new ValidationError('User does not exist');
     }
 
@@ -34,14 +35,16 @@ router.post('/api/v1/auth/login', async (req,res)=>{
         throw new ValidationError('Password is incorrect');
     }
 
+    // create json web token
+    const token = truePassword.createJWT();
 
     // if email and password is a match, then user can sign in
-    res.status(201).json({
-        success: true,
-        data: userInfo
+    user.password = undefined
+    res.status(StatusCodes.OK).json({
+        user,
+        token
     })
 
-    //res.status(201).send( {user});
 
 })
 

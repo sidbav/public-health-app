@@ -18,16 +18,7 @@ function Admin() {
     const [hasImage, setHasImage] = React.useState(true);
     const location = useLocation();
     const mainPanel = React.useRef(null);
-    const getRoutes = (routes) => {
-      return routes.map(({path,component,id}) => {
-          return (
-            <Route
-              path={path}
-            />
-          );
 
-      });
-    };
     React.useEffect(() => {
       document.documentElement.scrollTop = 0;
       document.scrollingElement.scrollTop = 0;

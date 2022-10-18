@@ -30,6 +30,8 @@ const passwordError={
 };
 
 
+
+
 const Register = ()=>  {
   const [newUser, setNewUser] = useState(initialState);
   const [newPassWordWrong, setnewPassWordWrong] = useState(passwordError);
@@ -286,7 +288,7 @@ const toggleMember = ()=>{
               <li
                 className={newPassWordWrong.hasSpclChr ? "text-success" : "text-danger"
                 }>
-                At least on of the special characters 
+                At least on of the special characters
               </li>
             </ul>
           </Form.Group>

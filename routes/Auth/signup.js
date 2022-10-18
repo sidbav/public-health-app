@@ -6,6 +6,8 @@ import dotenv from 'dotenv'
 dotenv.config()
 import validator from 'validator'
 import ValidationError from '../../errors/validation-error.js'
+import { StatusCodes } from 'http-status-codes'
+
 // controller for sign up
 const router = express.Router();
 router.post('/api/v1/auth/signup', async (req,res)=>{
@@ -37,10 +39,22 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
 
     //adding to database
     const user = await User.create({ email, password, lastName, firstName, phoneNumber, dob} );
-
     await user.save()
 
-    res.status(201).send({user});
+    // create json webtoken
+    const token = user.createJWT();
+
+    res.status(StatusCodes.OK).json(
+        {
+            user:{
+            email: user.email,
+            lastName : user.lastName,
+            firstName: user.firstName,
+            phoneNumber: user.phoneNumber,
+            dob : user.dob
+        } , token}
+
+        );
 
 })
 
