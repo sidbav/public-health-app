@@ -32,18 +32,18 @@ function Dashboard() {
                     </div>
                   </Col>
                   <Col xs="7">
-                    <div className="numbers">
+                   {/*} <div className="numbers">
                       <p className="card-category">Number</p>
-                      <Card.Title as="h4">150GB</Card.Title>
-                    </div>
+                     < Card.Title as="h4">150GB</Card.Title >
+  </div>*/}
                   </Col>
                 </Row>
               </Card.Body>
               <Card.Footer>
                 <hr></hr>
                 <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update Now
+                  {/*<i className="fas fa-redo mr-1"></i>
+                  Update Now*/}
                 </div>
               </Card.Footer>
             </Card>
@@ -59,8 +59,8 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Revenue</p>
-                      <Card.Title as="h4">$ 1,345</Card.Title>
+                      {/*<p className="card-category">Revenue</p>
+                      <Card.Title as="h4">$ 1,345</Card.Title>*/}
                     </div>
                   </Col>
                 </Row>
@@ -68,8 +68,8 @@ function Dashboard() {
               <Card.Footer>
                 <hr></hr>
                 <div className="stats">
-                  <i className="far fa-calendar-alt mr-1"></i>
-                  Last day
+                 {/* <i className="far fa-calendar-alt mr-1"></i>
+                  Last day*/}
                 </div>
               </Card.Footer>
             </Card>
@@ -85,8 +85,8 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Errors</p>
-                      <Card.Title as="h4">23</Card.Title>
+                     {/* <p className="card-category">Errors</p>
+                      <Card.Title as="h4">23</Card.Title>*/}
                     </div>
                   </Col>
                 </Row>
@@ -94,8 +94,8 @@ function Dashboard() {
               <Card.Footer>
                 <hr></hr>
                 <div className="stats">
-                  <i className="far fa-clock-o mr-1"></i>
-                  In the last hour
+                  {/*<i className="far fa-clock-o mr-1"></i>
+                  In the last hour*/}
                 </div>
               </Card.Footer>
             </Card>
@@ -111,8 +111,8 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Followers</p>
-                      <Card.Title as="h4">+45K</Card.Title>
+                     {/* <p className="card-category">Followers</p>
+                      <Card.Title as="h4">+45K</Card.Title>*/}
                     </div>
                   </Col>
                 </Row>
@@ -120,8 +120,8 @@ function Dashboard() {
               <Card.Footer>
                 <hr></hr>
                 <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update now
+                 {/* <i className="fas fa-redo mr-1"></i>
+                  Update now*/}
                 </div>
               </Card.Footer>
             </Card>
@@ -131,8 +131,8 @@ function Dashboard() {
           <Col md="8">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Users Behavior</Card.Title>
-                <p className="card-category">24 Hours performance</p>
+               {/* <Card.Title as="h4">Users Behavior</Card.Title>
+                <p className="card-category">24 Hours performance</p>*/}
               </Card.Header>
               <Card.Body>
                 <div className="ct-chart" id="chartHours">
@@ -186,7 +186,7 @@ function Dashboard() {
                   />
                 </div>
               </Card.Body>
-              <Card.Footer>
+             {/* <Card.Footer>
                 <div className="legend">
                   <i className="fas fa-circle text-info"></i>
                   Open <i className="fas fa-circle text-danger"></i>
@@ -198,15 +198,15 @@ function Dashboard() {
                   <i className="fas fa-history"></i>
                   Updated 3 minutes ago
                 </div>
-              </Card.Footer>
+                  </Card.Footer>*/}
             </Card>
           </Col>
           <Col md="4">
             <Card>
-              <Card.Header>
+              {/*<Card.Header>
                 <Card.Title as="h4">Email Statistics</Card.Title>
                 <p className="card-category">Last Campaign Performance</p>
-              </Card.Header>
+                </Card.Header>*/}
               <Card.Body>
                 <div
                   className="ct-chart ct-perfect-fourth"
@@ -220,7 +220,7 @@ function Dashboard() {
                     type="Pie"
                   />
                 </div>
-                <div className="legend">
+                {/*<div className="legend">
                   <i className="fas fa-circle text-info"></i>
                   Open <i className="fas fa-circle text-danger"></i>
                   Bounce <i className="fas fa-circle text-warning"></i>
@@ -230,14 +230,14 @@ function Dashboard() {
                 <div className="stats">
                   <i className="far fa-clock"></i>
                   Campaign sent 2 days ago
-                </div>
+                  </div>*/}
               </Card.Body>
             </Card>
           </Col>
         </Row>
         <Row>
           <Col md="6">
-            <Card>
+            {/*<Card>
               <Card.Header>
                 <Card.Title as="h4">2017 Sales</Card.Title>
                 <p className="card-category">All products including Taxes</p>
@@ -327,14 +327,14 @@ function Dashboard() {
                   Data information certified
                 </div>
               </Card.Footer>
-            </Card>
+                  </Card>*/}
           </Col>
           <Col md="6">
             <Card className="card-tasks">
               <Card.Header>
-                <Card.Title as="h4">Tasks</Card.Title>
-                <p className="card-category">Backend development</p>
-              </Card.Header>
+                <Card.Title as="h4">Survey</Card.Title>
+                {/*<p className="card-category">Backend development</p>*/}
+                </Card.Header>
               <Card.Body>
                 <div className="table-full-width">
                   <Table>
@@ -352,8 +352,7 @@ function Dashboard() {
                           </Form.Check>
                         </td>
                         <td>
-                          Sign contract for "What are conference organizers
-                          afraid of?"
+                        U.S. Household Food Security Survey
                         </td>
                         <td className="td-actions text-right">
                           <OverlayTrigger
@@ -386,7 +385,7 @@ function Dashboard() {
                           </OverlayTrigger>
                         </td>
                       </tr>
-                      <tr>
+                      {/*<tr>
                         <td>
                           <Form.Check className="mb-1 pl-0">
                             <Form.Check.Label>
@@ -618,7 +617,7 @@ function Dashboard() {
                             </Button>
                           </OverlayTrigger>
                         </td>
-                      </tr>
+                          </tr>*/}
                     </tbody>
                   </Table>
                 </div>
