@@ -1,6 +1,6 @@
 import { response } from "express";
 import request from 'supertest'
-import { app } from "../../app.js";
+import { app } from "../../../app.js";
 import{ StatusCodes} from 'http-status-codes'
 
 it('successfully Login' ,async () => {
@@ -16,16 +16,6 @@ it('successfully Login' ,async () => {
          "phoneNumber":"12345",
          "dob" : "2019-07-04T13:33:03.969Z"
     }).expect(201);
-
-
-    //  test for invalid email
-    // await request(app)
-    // .post('/api/v1/auth/login')
-    // .send({
-    //     "email":"asdasasdasd.com",
-    //     "password":"asdasdaad",
-    // }).expect(400);
-
 
     // login
     await request(app)
