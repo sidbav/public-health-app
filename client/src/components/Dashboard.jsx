@@ -36,7 +36,7 @@ function Dashboard() {
                    {/*} <div className="numbers">
                       <p className="card-category">Number</p>
                      < Card.Title as="h4">150GB</Card.Title >
-  </div>*/}
+                      </div>*/}
                   </Col>
                 </Row>
               </Card.Body>
@@ -129,6 +129,68 @@ function Dashboard() {
           </Col>
         </Row>
         <Row>
+        <Col md="6">
+            <Card className="card-tasks">
+              <Card.Header>
+                <Card.Title as="h4">Survey</Card.Title>
+                {/*<p className="card-category">Backend development</p>*/}
+                </Card.Header>
+              <Card.Body>
+                <div className="table-full-width">
+                  <Table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                        <td>
+                        U.S. Household Food Security Survey
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-488980961">
+                                Start
+                              </Tooltip>
+                            }
+                          ><Link to='/Surveyone'>
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button></Link>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-506045838">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
           <Col md="8">
             <Card>
               <Card.Header>
@@ -330,11 +392,11 @@ function Dashboard() {
               </Card.Footer>
                   </Card>*/}
           </Col>
-          <Col md="6">
+          {/*<Col md="6">
             <Card className="card-tasks">
               <Card.Header>
                 <Card.Title as="h4">Survey</Card.Title>
-                {/*<p className="card-category">Backend development</p>*/}
+                <p className="card-category">Backend development</p>
                 </Card.Header>
               <Card.Body>
                 <div className="table-full-width">
@@ -618,7 +680,7 @@ function Dashboard() {
                             </Button>
                           </OverlayTrigger>
                         </td>
-                          </tr>*/}
+                          </tr>
                     </tbody>
                   </Table>
                 </div>
@@ -631,7 +693,7 @@ function Dashboard() {
                 </div>
               </Card.Footer>
             </Card>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </>
