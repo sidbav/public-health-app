@@ -1,5 +1,6 @@
 import React from "react";
 import ChartistGraph from "react-chartist";
+import { Link } from "react-router-dom";
 // react-bootstrap components
 import {
   Badge,
@@ -358,17 +359,17 @@ function Dashboard() {
                           <OverlayTrigger
                             overlay={
                               <Tooltip id="tooltip-488980961">
-                                Edit Task..
+                                Start
                               </Tooltip>
                             }
-                          >
+                          ><Link to='/Surveyone'>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
                               variant="info"
                             >
                               <i className="fas fa-edit"></i>
-                            </Button>
+                            </Button></Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={

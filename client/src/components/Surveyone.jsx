@@ -25,6 +25,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "start_using",
       "title": "Now I’m going to read you several statements that people have made about their foodsituation. For these statements, please tell me whether the statement was often true,sometimes true, or never true for (you/your household) in the last 12 months—that is,since last (name of current month).\nThe first statement is “(I/We) worried whether (my/our) food would run out before (I/we)got money to buy more.” Was that often true, sometimes true, or never true for (you/yourhousehold) in the last 12 months?",
+      "isRequired": true,
       "choices": [
        "Often true",
        {
@@ -41,6 +42,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question2",
       "title": "“The food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.”\nWas that often, sometimes, or never true for (you/your household) in the last 12 months??",
+      "isRequired": true,
       "choices": [
        "Often true",
        {
@@ -57,6 +59,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question4",
       "title": "“(I/we) couldn’t afford to eat balanced meals.” Was that often, sometimes, or never true\nfor (you/your household) in the last 12 months?\n",
+      "isRequired": true,
       "choices": [
        "Often true",
        {
@@ -93,6 +96,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question8",
       "title": "AD1 :In the last 12 months, since last (name of current month), did (you/you or other adults in your household) ever cut the size of your meals or skip meals because there wasn't enough money for food?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Often true",
@@ -133,6 +137,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question10",
       "title": "AD2. In the last 12 months, did you ever eat less than you felt you should because there wasn't enough money for food?\n",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -154,6 +159,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question11",
       "title": "AD3. In the last 12 months, were you every hungry but didn't eat because there wasn't enough money for food?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -175,6 +181,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question12",
       "title": "AD4. In the last 12 months, did you lose weight because there wasn't enough money for food?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -216,6 +223,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question16",
       "title": "AD5. In the last 12 months, did (you/you or other adults in your household) ever not eat for a whole day because there wasn't enough money for food?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -279,6 +287,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question23",
       "title": "CH1. “(I/we) relied on only a few kinds of low-cost food to feed (my/our) child/the children) because (I was/we were) running out of money to buy food.” Was that often, sometimes, or never true for (you/your household) in the last 12 months?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -299,6 +308,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question24",
       "title": "CH2. “(I/We) couldn’t feed (my/our) child/the children) a balanced meal, because (I/we)\ncouldn’t afford that.” Was that often, sometimes, or never true for (you/your household)\nin the last 12 months?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -319,6 +329,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question25",
       "title": "CH3. \"(My/Our child was/The children were) not eating enough because (I/we) just couldn't afford enough food.\" Was that often, sometimes, or never true for (you/your household) in the last 12 months?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -359,6 +370,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question29",
       "title": "CH4. In the last 12 months, since (current month) of last year, did you ever cut the size of (your child's/any of the children's) meals because there wasn't enough money for food?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -378,6 +390,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question30",
       "title": "CH5. In the last 12 months, did (CHILD’S NAME/any of the children) ever skip meals because there wasn't enough money for food?\n",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -414,6 +427,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question32",
       "title": "CH6. In the last 12 months, (was your child/were the children) ever hungry but you just couldn't afford more food?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -433,6 +447,7 @@ const surveyJson ={
       "type": "radiogroup",
       "name": "question33",
       "title": "CH7. In the last 12 months, did (your child/any of the children) ever not eat for a whole day because there wasn't enough money for food?",
+      "isRequired": true,
       "choices": [
        {
         "value": "Almost every month",
@@ -510,13 +525,13 @@ const surveyJson ={
      },
      {
       "type": "text",
-      "name": "AD1a/AD5a/CH5a [IF YES ABOVE, ASK] In the last 30 days, how many days did this happen?"
+      "name": "AD1a/AD5a/CH5a [IF YES ABOVE, ASK] In the last 30 days, how many days did this happen?",
+      "isRequired": true
      }
     ]
    }
   ]
  };
-
 const Surveyone = () => {
   const survey = new Model(surveyJson);
   return <Survey model={survey} />;
