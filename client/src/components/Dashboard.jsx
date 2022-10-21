@@ -1,5 +1,6 @@
 import React from "react";
 import ChartistGraph from "react-chartist";
+import { Link } from "react-router-dom";
 // react-bootstrap components
 import {
   Badge,
@@ -35,7 +36,7 @@ function Dashboard() {
                    {/*} <div className="numbers">
                       <p className="card-category">Number</p>
                      < Card.Title as="h4">150GB</Card.Title >
-  </div>*/}
+                      </div>*/}
                   </Col>
                 </Row>
               </Card.Body>
@@ -128,15 +129,307 @@ function Dashboard() {
           </Col>
         </Row>
         <Row>
+        <Col md="6">
+            <Card className="card-tasks">
+              <Card.Header>
+                <Card.Title as="h4">Survey</Card.Title>
+                {/*<p className="card-category">Backend development</p>*/}
+                </Card.Header>
+              <Card.Body>
+                <div className="table-full-width">
+                  <Table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                        <td>
+                        U.S. Household Food Security Survey
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-488980961">
+                                Start
+                              </Tooltip>
+                            }
+                          ><Link to='/Surveyone'>
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button></Link>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-506045838">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                        <td>
+                        U.S. Adult Food Security Survey
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-537440761">
+                                Start
+                              </Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-21130535">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                        <td>
+                        Six-Item Short Form of the Food Security Survey
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-537440761">
+                                Start
+                              </Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-21130535">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                        <td>
+                        Self-Administered Food Security Survey Module for Youth Ages 12 and Older
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-537440761">
+                                Start
+                              </Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-21130535">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                        <td>
+                        Encuesta sobre la seguridad alimentaria de los hogares de EE.UU.(Spanish Translation of the U.S. Household Food Security Survey Module)
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-537440761">
+                                Start
+                              </Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-21130535">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                        <td>
+                        美国家庭食物安全调查模块(Chinese Translation of the U.S. Household Food Security Survey Module)
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-537440761">
+                                Start
+                              </Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-21130535">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
           <Col md="8">
             <Card>
               <Card.Header>
-               {/* <Card.Title as="h4">Users Behavior</Card.Title>
+                {/*<Card.Title as="h4">Users Behavior</Card.Title>
                 <p className="card-category">24 Hours performance</p>*/}
               </Card.Header>
               <Card.Body>
                 <div className="ct-chart" id="chartHours">
-                  <ChartistGraph
+                  {/*<ChartistGraph
                     data={{
                       labels: [
                         "9:00AM",
@@ -183,10 +476,10 @@ function Dashboard() {
                         },
                       ],
                     ]}
-                  />
-                </div>
+                  />*/}
+                  </div>
               </Card.Body>
-             {/* <Card.Footer>
+              {/*<Card.Footer>
                 <div className="legend">
                   <i className="fas fa-circle text-info"></i>
                   Open <i className="fas fa-circle text-danger"></i>
@@ -212,13 +505,13 @@ function Dashboard() {
                   className="ct-chart ct-perfect-fourth"
                   id="chartPreferences"
                 >
-                  <ChartistGraph
+                  {/*<ChartistGraph
                     data={{
                       labels: ["40%", "20%", "40%"],
                       series: [40, 20, 40],
                     }}
                     type="Pie"
-                  />
+                  />*/}
                 </div>
                 {/*<div className="legend">
                   <i className="fas fa-circle text-info"></i>
@@ -329,11 +622,11 @@ function Dashboard() {
               </Card.Footer>
                   </Card>*/}
           </Col>
-          <Col md="6">
+          {/*<Col md="6">
             <Card className="card-tasks">
               <Card.Header>
                 <Card.Title as="h4">Survey</Card.Title>
-                {/*<p className="card-category">Backend development</p>*/}
+                <p className="card-category">Backend development</p>
                 </Card.Header>
               <Card.Body>
                 <div className="table-full-width">
@@ -358,17 +651,17 @@ function Dashboard() {
                           <OverlayTrigger
                             overlay={
                               <Tooltip id="tooltip-488980961">
-                                Edit Task..
+                                Start
                               </Tooltip>
                             }
-                          >
+                          ><Link to='/Surveyone'>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
                               variant="info"
                             >
                               <i className="fas fa-edit"></i>
-                            </Button>
+                            </Button></Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={
@@ -617,7 +910,7 @@ function Dashboard() {
                             </Button>
                           </OverlayTrigger>
                         </td>
-                          </tr>*/}
+                          </tr>
                     </tbody>
                   </Table>
                 </div>
@@ -630,7 +923,7 @@ function Dashboard() {
                 </div>
               </Card.Footer>
             </Card>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </>
