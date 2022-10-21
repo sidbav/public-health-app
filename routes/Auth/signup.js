@@ -1,13 +1,17 @@
 
 import express from 'express'
 // import database Model
-import User from '../models/User.js'
+import User from '../../models/User.js'
 import dotenv from 'dotenv'
 dotenv.config()
 import validator from 'validator'
-import ValidationError from '../errors/validation-error.js'
+import ValidationError from '../../errors/validation-error.js'
+import { StatusCodes } from 'http-status-codes'
+import bcryptjs from 'bcryptjs'
+
 // controller for sign up
 const router = express.Router();
+
 router.post('/api/v1/auth/signup', async (req,res)=>{
 
     const {email, password, lastName, firstName, phoneNumber, dob} = req.body
@@ -33,14 +37,27 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
         throw new ValidationError('Email already in User');
     }
 
+    // hash the password
+
+    const hashedPassword = await bcryptjs.hash(password, 10);
 
 
     //adding to database
-    const user = await User.create({ email, password, lastName, firstName, phoneNumber, dob} );
-
+    const user = await User.create({ email, password: hashedPassword, lastName, firstName, phoneNumber, dob} );
     await user.save()
 
-    res.status(201).send({user});
+    // create json webtoken
+    const token = user.createJWT();
+
+    res.status(StatusCodes.CREATED).json(
+        {
+            user:{
+            email: user.email,
+            lastName : user.lastName,
+            firstName: user.firstName,
+            phoneNumber: user.phoneNumber,
+            dob : user.dob
+        } , token});
 
 })
 

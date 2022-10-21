@@ -3,7 +3,7 @@
 import {jest} from '@jest/globals';
 const {MongoMemoryServer} = require('mongodb-memory-server')
 const mongoose = require('mongoose')
-const {app} = require('../app.js')
+const { app } = require('../app.js')
 
 let mongo
 

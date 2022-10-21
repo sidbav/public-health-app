@@ -7,6 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 
+// Redux
+import {connect} from 'react-redux'
+import { register, login ,clearError} from "../redux/actions/auth";
+
+import PropTypes from 'prop-types'
+
+
+
 
 const initialState = {
   firstName :"",
@@ -30,12 +38,21 @@ const passwordError={
 };
 
 
-const Register = ()=>  {
+
+
+const Register = ({register ,login ,isAuthenticated ,showError, errorMessage,clearError})=>  {
   const [newUser, setNewUser] = useState(initialState);
   const [newPassWordWrong, setnewPassWordWrong] = useState(passwordError);
   const navigate = useNavigate();
 
-  useEffect(() => {}, [newUser]);
+  useEffect(() => {
+      if(isAuthenticated){
+        setTimeout(() => {
+          navigate('/profile')
+        }, 2000);
+      }
+
+  }, [isAuthenticated,navigate]);
 
 
   // click this button to change the the login and signup page
@@ -53,40 +70,46 @@ const toggleMember = ()=>{
     if (!isMember){
        // register request overhere
         try {
-            const response = await axios.post('/api/v1/auth/signup',{
-              firstName,
+            register({ firstName,
               lastName,
               dob,
               password,
               email ,
-              phoneNumber,
-            })
+              phoneNumber});
 
-          const {user} = response.data;
-          console.log(user);
+
+          // const {user} = response.data;
+
           //setNewUser({...newUser, isMember: !newUser.isMember})
-          navigate('/landing');
+
+          if (isAuthenticated){
+            clearError()
+            navigate('/profile');
+          }else{
+            setNewUser({...newUser, hasEmail: errorMessage})
+          }
 
         } catch (error) {
+
           setNewUser({...newUser, hasEmail: error.response.data.msg})
-            console.log(error.response.data.msg)
+
         }
     }else{
 
-        //login request overhere
 
         try {
-          const response = await axios.post('/api/v1/auth/login',{
-            password,
-            email ,
-          })
-        const {user} = response.data;
-        console.log(user);
-       // setNewUser({...newUser, isMember: !newUser.isMember})
-        navigate('/landing');
+          login({ email, password});
+          if (isAuthenticated){
+            clearError()
+            navigate('/profile');
+          }else{
+            setNewUser({...newUser, loginError: errorMessage})
+          }
+
+
 
       } catch (error) {
-        setNewUser({...newUser, loginError: error.response.data.msg})
+
           console.log(error.response.data.msg)
       }
 
@@ -215,8 +238,8 @@ const toggleMember = ()=>{
               />
           </Form.Group>
           {
-          !newUser.isMember &&newUser.hasEmail && <li className= { " mb-3 text-danger"}>
-            {newUser.hasEmail}
+            showError && <li className= { " mb-3 text-danger"}>
+             {errorMessage}
               </li>
               }
         {
@@ -286,7 +309,7 @@ const toggleMember = ()=>{
               <li
                 className={newPassWordWrong.hasSpclChr ? "text-success" : "text-danger"
                 }>
-                At least on of the special characters 
+                At least on of the special characters
               </li>
             </ul>
           </Form.Group>
@@ -313,4 +336,27 @@ const toggleMember = ()=>{
   )
 }
 
-export default Register
+
+Register.propTypes = {
+  register: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
+  clearError:PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+  errorMessage: PropTypes.string,
+  showError: PropTypes.bool
+}
+
+const mapStateToProps = (state) => {
+    return {
+      isAuthenticated: state.auth.isAuthenticated,
+      errorMessage: state.auth.errorMessage,
+      showError          : state.auth.showError
+    }
+
+}
+
+export default connect(mapStateToProps,{register,login, clearError})(Register);
+
+
+
+
