@@ -44,7 +44,7 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
     // create json webtoken
     const token = user.createJWT();
 
-    res.status(StatusCodes.OK).json(
+    res.status(StatusCodes.CREATED).json(
         {
             user:{
             email: user.email,
@@ -52,9 +52,7 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
             firstName: user.firstName,
             phoneNumber: user.phoneNumber,
             dob : user.dob
-        } , token}
-
-        );
+        } , token});
 
 })
 

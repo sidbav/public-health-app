@@ -40,7 +40,7 @@ router.post('/api/v1/auth/login', async (req,res)=>{
 
     // if email and password is a match, then user can sign in
     user.password = undefined
-    res.status(StatusCodes.OK).json({
+    res.status(StatusCodes.CREATED).json({
         user,
         token
     })

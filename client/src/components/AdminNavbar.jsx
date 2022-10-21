@@ -4,7 +4,16 @@ import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 
 import routes from '../routes.js'
 
-function AdminNavbar() {
+
+// Redux
+import { connect }from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from "../redux/actions/auth.js";
+
+
+
+
+function AdminNavbar({logout}) {
   const location = useLocation();
   const mobileSidebarToggle = (e) => {
     e.preventDefault();
@@ -178,8 +187,8 @@ function AdminNavbar() {
             <Nav.Item>
               <Nav.Link
                 className="m-0"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                href="#"
+                onClick={logout}
               >
                 <span className="no-icon">Log out</span>
               </Nav.Link>
@@ -192,4 +201,10 @@ function AdminNavbar() {
 }
 
 
-export default AdminNavbar;
+
+AdminNavbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+
+
+}
+export default connect(null , {logout})(AdminNavbar);

@@ -30,9 +30,9 @@ function App() {
                 <Admin />
             </ProtectedRoute>
           }>
-              <Route path = "dashboard" element  = {<Dashboard />}/>
-              <Route path = "profile" element  = {<Profile />}/>
-              <Route path = "maps" element  = {<Maps /> }/>
+              <Route path = "/dashboard" element  = {<Dashboard />}/>
+              <Route path = "/profile" element  = {<Profile />}/>
+              <Route path = "/maps" element  = {<Maps /> }/>
           </Route>
 
           <Route path ="/landing"  element = {<Landing/>}/>
