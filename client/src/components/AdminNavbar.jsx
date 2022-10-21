@@ -72,7 +72,7 @@ function AdminNavbar({logout}) {
                 <span className="d-lg-none ml-1">Dashboard</span>
               </Nav.Link>
             </Nav.Item>
-            <Dropdown as={Nav.Item}>
+            {/*<Dropdown as={Nav.Item}>
               <Dropdown.Toggle
                 as={Nav.Link}
                 data-toggle="dropdown"
@@ -183,7 +183,7 @@ function AdminNavbar({logout}) {
                   Separated link
                 </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown>*/}
             <Nav.Item>
               <Nav.Link
                 className="m-0"

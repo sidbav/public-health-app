@@ -7,6 +7,7 @@ dotenv.config()
 import validator from 'validator';
 import ValidationError from '../../errors/validation-error.js'
 import { StatusCodes } from 'http-status-codes';
+import bcryptjs from 'bcryptjs';
 
 // controller for sign in
 const router = express.Router();
@@ -29,14 +30,14 @@ router.post('/api/v1/auth/login', async (req,res)=>{
         throw new ValidationError('User does not exist');
     }
 
-    // check if the email and password is a match
-    const truePassword = await User.findOne({email, password})
-    if (!truePassword) {
+    // check if the hash and password is a match
+    const isMatch = await bcryptjs.compare(password, user.password);
+    if (!isMatch) {
         throw new ValidationError('Password is incorrect');
     }
 
-    // create json web token
-    const token = truePassword.createJWT();
+    // create json webtoken
+    const token = user.createJWT();
 
     // if email and password is a match, then user can sign in
     user.password = undefined
