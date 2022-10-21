@@ -527,6 +527,36 @@ const surveyJson ={
       "type": "text",
       "name": "AD1a/AD5a/CH5a [IF YES ABOVE, ASK] In the last 30 days, how many days did this happen?",
       "isRequired": true
+     },
+     {
+      "type": "dropdown",
+      "name": "question43",
+      "title": "The location selected below should indicate your physical location                                      ",
+      "isRequired": true,
+      "choices": [
+       {
+        "value": "item1",
+        "text": "Texas"
+       },
+       {
+        "value": "item2",
+        "text": "California"
+       },
+       {
+        "value": "item3",
+        "text": "Ohio"
+       },
+       {
+        "value": "item4",
+        "text": "Utah"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "name": "question44",
+      "title": "ZIP",
+      "isRequired": true
      }
     ]
    }
