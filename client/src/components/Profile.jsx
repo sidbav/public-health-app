@@ -13,7 +13,16 @@ import {
   Col
 } from "react-bootstrap";
 
-function Profile() {
+// redux
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types';
+
+
+
+
+function Profile({user}) {
+  const {email, lastName , firstName, phoneNumber} = user;
+
   return (
     <>
       <Container fluid>
@@ -26,35 +35,14 @@ function Profile() {
               <Card.Body>
                 <Form>
                   <Row>
-                    <Col className="pr-1" md="5">
-                      <Form.Group>
-                        <label>Company (disabled)</label>
-                        <Form.Control
-                          defaultValue="Creative Code Inc."
-                          disabled
-                          placeholder="Company"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                    <Col className="px-1" md="3">
-                      <Form.Group>
-                        <label>Username</label>
-                        <Form.Control
-                          defaultValue="michael23"
-                          placeholder="Username"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                    <Col className="pl-1" md="4">
+                    <Col className="pr-1" md="6">
                       <Form.Group>
                         <label htmlFor="exampleInputEmail1">
                           Email address
                         </label>
                         <Form.Control
-                          placeholder="Email"
-                          type="email"
+                          defaultValue={email}
+                          type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
@@ -64,8 +52,8 @@ function Profile() {
                       <Form.Group>
                         <label>First Name</label>
                         <Form.Control
-                          defaultValue="Mike"
-                          placeholder="Company"
+                          defaultValue={firstName}
+                          placeholder=""
                           type="text"
                         ></Form.Control>
                       </Form.Group>
@@ -74,7 +62,7 @@ function Profile() {
                       <Form.Group>
                         <label>Last Name</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue={lastName}
                           placeholder="Last Name"
                           type="text"
                         ></Form.Control>
@@ -86,7 +74,7 @@ function Profile() {
                       <Form.Group>
                         <label>Address</label>
                         <Form.Control
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                          defaultValue="University Dr"
                           placeholder="Home Address"
                           type="text"
                         ></Form.Control>
@@ -98,7 +86,7 @@ function Profile() {
                       <Form.Group>
                         <label>City</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          defaultValue="College Station"
                           placeholder="City"
                           type="text"
                         ></Form.Control>
@@ -108,7 +96,7 @@ function Profile() {
                       <Form.Group>
                         <label>Country</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue="United States"
                           placeholder="Country"
                           type="text"
                         ></Form.Control>
@@ -125,19 +113,7 @@ function Profile() {
                     </Col>
                   </Row>
                   <Row>
-                    <Col md="12">
-                      <Form.Group>
-                        <label>About Me</label>
-                        <Form.Control
-                          cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                          that two seat Lambo."
-                          placeholder="Here can be your description"
-                          rows="4"
-                          as="textarea"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
+                    
                   </Row>
                   <Button
                     className="btn-fill pull-right"
@@ -160,4 +136,14 @@ function Profile() {
   );
 }
 
-export default Profile;
+Profile.propTypes = {
+  user: PropTypes.object,
+}
+
+const mapStateToProps = (state) => {
+  return {
+      user: state.auth.user
+  }
+
+}
+export default connect(mapStateToProps, null)(Profile);
