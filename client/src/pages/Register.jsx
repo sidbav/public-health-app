@@ -101,7 +101,6 @@ const toggleMember = ()=>{
           login({ email, password});
           if (isAuthenticated){
             clearError()
-            console.log('here')
             navigate('/profile');
           }else{
             setNewUser({...newUser, loginError: errorMessage})

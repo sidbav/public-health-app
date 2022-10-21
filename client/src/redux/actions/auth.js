@@ -48,7 +48,8 @@ export const login = (formData) => async (dispatch) => {
         dispatch({
             type: LOGIN_FAIL,
             payload: error.response.data.msg
-        })
+        });
+        dispatch(clearError());
     }
 
 
@@ -78,6 +79,8 @@ export const register = (formData) => async (dispatch) => {
             }
         })
 
+
+
         // add token to the local storage.
         addUserToLocalStorage({user, token});
 
@@ -87,7 +90,7 @@ export const register = (formData) => async (dispatch) => {
             type:REGISTER_FAIL,
             payload: error.response.data.msg
         })
-        // clear the error 
+        // clear the error
         dispatch(clearError())
     }
 }
