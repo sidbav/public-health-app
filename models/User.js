@@ -52,7 +52,6 @@ const UserSchema = new mongoose.Schema({
 // build method for user model
 UserSchema.methods.createJWT = function () {
     return jsonwebtoken.sign({userId: this._id} , process.env.JWT_SECRET,{expiresIn: '1d'})
-
 }
 
 

@@ -34,13 +34,12 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
     // Check if the user already exist
     const userExisted = await User.findOne({email});
     if (userExisted) {
-        throw new ValidationError('Email already in User');
+        throw new ValidationError('Email already in used');
     }
 
     // hash the password
 
     const hashedPassword = await bcryptjs.hash(password, 10);
-
 
     //adding to database
     const user = await User.create({ email, password: hashedPassword, lastName, firstName, phoneNumber, dob} );
