@@ -1,3 +1,0 @@
-PORT = 4000
-MONGO_URL = mongodb+srv://codetouchdown:codetouchdowntamu@publichealthproject.3q7d8z6.mongodb.net/?retryWrites=true&w=majority
-JWT_SECRET = QfTjWnZr4u7x!A%D*G-KaNdRgUkXp2s5
