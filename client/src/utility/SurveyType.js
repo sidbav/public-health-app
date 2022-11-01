@@ -1,4 +1,4 @@
- export const surveyJson ={
+ export const surveyHousehold ={
     "title": "U.S. Household Food Security Survey",
     "logoPosition": "right",
     "completedHtml": "<h3>Thank you for completing the survey</h3>",
@@ -558,7 +558,7 @@
     ]
    };
 
-export const surveyJson_ad =
+export const surveyAdultFood =
 {
    "title": "U.S. Adult Food Security Survey",
    "logoPosition": "right",
