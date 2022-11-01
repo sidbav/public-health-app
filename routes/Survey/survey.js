@@ -19,7 +19,10 @@ router.post('/api/v1/auth/survey', async (req,res)=>{
     //     {const {quesiton1, quesiton2, quesiton3, quesiton4, quesiton5, quesiton6, quesiton7, quesiton8, quesiton9} = req.body}
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6bc2b0f42953df8fd921e582684c8d3ac42ecab
     // // creat date for sorting
     // const surveyDate = new Date();
     // const dateOrder = surveyDate.getFullYear + surveyDate.getMonth + surveyDate.getDate
@@ -66,6 +69,10 @@ router.post('/api/v1/auth/survey', async (req,res)=>{
     //             } });
 
     //     case '2':
+<<<<<<< HEAD
+=======
+
+>>>>>>> c6bc2b0f42953df8fd921e582684c8d3ac42ecab
 
     //             } });
 
