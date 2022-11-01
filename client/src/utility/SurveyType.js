@@ -1,4 +1,4 @@
- export const surveyHousehold ={
+export const surveyHousehold ={
     "title": "U.S. Household Food Security Survey",
     "logoPosition": "right",
     "completedHtml": "<h3>Thank you for completing the survey</h3>",
@@ -558,8 +558,7 @@
     ]
    };
 
-export const surveyAdultFood =
-{
+export const surveyAdultFood ={
    "title": "U.S. Adult Food Security Survey",
    "logoPosition": "right",
    "pages": [
@@ -825,3 +824,201 @@ export const surveyAdultFood =
     }
    ]
   }
+
+export const surveyChildrenFood = {
+   "title": "Self-Administered Food Security Survey Module for Children Ages 12 Years and Older",
+   "logoPosition": "right",
+   "pages": [
+      {
+      "name": "page1",
+      "elements": [
+      {
+         "type": "html",
+         "name": "Pre1",
+         "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><strong><u>Background:</u></strong>&nbsp; The Child Food Security Survey Module was developed by researchers at the University of&nbsp;Southern Mississippi in collaboration with ERS and documented in &ldquo;Food Security of Older Children Can Be&nbsp;Assessed Using a Standardized Survey Instrument,&rdquo; by Carol L. Connell, Mark Nord, Kristi L. Lofton, and Kathy&nbsp;Yadrick (published by the&nbsp;<em>Journal of Nutrition</em>, vol. 134, no. 10, pp. 2566-72, 2004). Internal validity of the&nbsp;module was found adequate for children ages 12 and older, but its use is not recommended for younger children.</p>\n\n<p>Initial validation was conducted in a sample of children from a school in Mississippi. Use of the module in other&nbsp;regions of the country should be considered exploratory until further validation assessment is conducted.</p>\n\n<p>Cognitive testing indicated that recall and responses for a 12-month period might not be reliable, and a 30-day&nbsp;reference period is recommended.</p>\n</body>\n</html>"
+      },
+      {
+         "type": "html",
+         "name": "pre2",
+         "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p align=\"center\"><strong>[Begin Child Food Security Survey Module]</strong></p>\n\n<p>The following questions are about the food situation in your home <strong>during the last month</strong>.&nbsp; Please circle the answer that best describes you.&nbsp; Do not put your name on the paper.&nbsp; Your answers will remain a secret.</p>\n</body>\n</html>\n"
+      },
+      {
+         "type": "checkbox",
+         "name": "question1",
+         "title": "Did you worry that food at home would run out before your family got money to buy more?  ",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question2",
+         "title": "Did the food that your family bought run out, and you didn’t have money to get more? ",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question3",
+         "title": "Did your meals only include a few kinds of cheap foods because your family was running out of money to buy food?  ",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question4",
+         "title": "How often were you not able to eat a balanced meal because your family didn’t have enough money? ",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question5",
+         "title": "Did you have to eat less because your family didn’t have enough money to buy food? ",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question6",
+         "title": "Has the size of your meals been cut because your family didn’t have enough money for food?",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question7",
+         "title": "Did you have to skip a meal because your family didn’t have enough money for food? ",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question8",
+         "title": "Were you hungry but didn’t eat because your family didn’t have enough food?",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "checkbox",
+         "name": "question9",
+         "title": "Did you not eat for a whole day because your family didn’t have enough money for food? ",
+         "choices": [
+         {
+         "value": "item1",
+         "text": "A LOT"
+         },
+         {
+         "value": "item2",
+         "text": "SOMETIMES"
+         },
+         {
+         "value": "item3",
+         "text": "NEVER"
+         }
+         ]
+      },
+      {
+         "type": "html",
+         "name": "end",
+         "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p align=\"center\"><strong>[End of Child Food Security Survey Module]</strong></p>\n</body>\n</html>"
+      }
+      ]
+      }
+   ]
+}
