@@ -2,6 +2,13 @@ import mongoose from "mongoose";
  
  const SurveyTypeFourSchema = new mongoose.Schema({
 
+    userId: {
+        type: String,
+        required: true,
+        unique: true,
+
+    },
+
     grade: {
         type: String,
         required: true,
@@ -43,7 +50,7 @@ import mongoose from "mongoose";
      },
  
      quesiton5: {
-         type: Date,
+         type: String,
 
      },
  

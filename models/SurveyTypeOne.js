@@ -18,6 +18,12 @@
  
  const SurveyTypeOneSchema = new mongoose.Schema({
 
+    userId: {
+        type: String,
+        required: true,
+        unique: true,
+
+    },
 
     grade: {
         type: Number,
@@ -61,7 +67,7 @@
      },
  
      AD1a: {
-         type: Date,
+         type: String,
 
      },
  

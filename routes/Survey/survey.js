@@ -19,7 +19,8 @@ router.post('/api/v1/auth/survey', async (req,res)=>{
 
     // creat date for sorting
     const surveyDate = new Date();
-    const dateOrder = surveyDate.getFullYear + surveyDate.getMonth + surveyDate.getDate
+    //const dateOrder = surveyDate.getFullYear + surveyDate.getMonth + surveyDate.getDate
+    const dateOrder = getTime();
 
     // calculate results
     switch(surveyType){
@@ -27,7 +28,7 @@ router.post('/api/v1/auth/survey', async (req,res)=>{
             // calculate surveyone result
             //
             //
-            const survey = await SurveyTypeOne.create({grade, surveyType,dateOrder,surveyDate,HH2, HH3, HH4, AD1, AD1a, AD2, AD3, AD4, AD5, AD5a, CH1, CH2, CH3, CH4, CH5, CH6, CH7} );
+            const survey = await SurveyTypeOne.create({userId, grade, surveyType,dateOrder,surveyDate,HH2, HH3, HH4, AD1, AD1a, AD2, AD3, AD4, AD5, AD5a, CH1, CH2, CH3, CH4, CH5, CH6, CH7} );
             await survey.save();
             res.status(200).json(
                 {
