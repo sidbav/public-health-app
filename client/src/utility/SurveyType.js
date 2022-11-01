@@ -18,7 +18,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "start_using",
+        "name": "HH2",
         "title": "Now I’m going to read you several statements that people have made about their foodsituation. For these statements, please tell me whether the statement was often true,sometimes true, or never true for (you/your household) in the last 12 months—that is,since last (name of current month).\nThe first statement is “(I/We) worried whether (my/our) food would run out before (I/we)got money to buy more.” Was that often true, sometimes true, or never true for (you/yourhousehold) in the last 12 months?",
         "isRequired": true,
         "choices": [
@@ -35,7 +35,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question2",
+        "name": "HH3",
         "title": "“The food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.”\nWas that often, sometimes, or never true for (you/your household) in the last 12 months??",
         "isRequired": true,
         "choices": [
@@ -52,7 +52,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question4",
+        "name": "HH4",
         "title": "“(I/we) couldn’t afford to eat balanced meals.” Was that often, sometimes, or never true\nfor (you/your household) in the last 12 months?\n",
         "isRequired": true,
         "choices": [
@@ -89,7 +89,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question8",
+        "name": "AD1",
         "title": "AD1 :In the last 12 months, since last (name of current month), did (you/you or other adults in your household) ever cut the size of your meals or skip meals because there wasn't enough money for food?",
         "isRequired": true,
         "choices": [
@@ -111,7 +111,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question9",
+        "name": "AD1a",
         "title": "AD1a. [IF YES ABOVE, ASK] How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?",
         "choices": [
          "Almost every month",
@@ -130,7 +130,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question10",
+        "name": "AD2",
         "title": "AD2. In the last 12 months, did you ever eat less than you felt you should because there wasn't enough money for food?\n",
         "isRequired": true,
         "choices": [
@@ -152,7 +152,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question11",
+        "name": "AD3",
         "title": "AD3. In the last 12 months, were you every hungry but didn't eat because there wasn't enough money for food?",
         "isRequired": true,
         "choices": [
@@ -174,7 +174,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question12",
+        "name": "AD4",
         "title": "AD4. In the last 12 months, did you lose weight because there wasn't enough money for food?",
         "isRequired": true,
         "choices": [
@@ -216,7 +216,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question16",
+        "name": "AD5",
         "title": "AD5. In the last 12 months, did (you/you or other adults in your household) ever not eat for a whole day because there wasn't enough money for food?",
         "isRequired": true,
         "choices": [
@@ -238,7 +238,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question17",
+        "name": "AD5a",
         "title": "AD5a. [IF YES ABOVE, ASK] How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?\n",
         "choices": [
          "Almost every month",
@@ -280,7 +280,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question23",
+        "name": "CH1",
         "title": "CH1. “(I/we) relied on only a few kinds of low-cost food to feed (my/our) child/the children) because (I was/we were) running out of money to buy food.” Was that often, sometimes, or never true for (you/your household) in the last 12 months?",
         "isRequired": true,
         "choices": [
@@ -301,7 +301,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question24",
+        "name": "CH2",
         "title": "CH2. “(I/We) couldn’t feed (my/our) child/the children) a balanced meal, because (I/we)\ncouldn’t afford that.” Was that often, sometimes, or never true for (you/your household)\nin the last 12 months?",
         "isRequired": true,
         "choices": [
@@ -322,7 +322,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question25",
+        "name": "CH3",
         "title": "CH3. \"(My/Our child was/The children were) not eating enough because (I/we) just couldn't afford enough food.\" Was that often, sometimes, or never true for (you/your household) in the last 12 months?",
         "isRequired": true,
         "choices": [
@@ -363,7 +363,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question29",
+        "name": "CH4",
         "title": "CH4. In the last 12 months, since (current month) of last year, did you ever cut the size of (your child's/any of the children's) meals because there wasn't enough money for food?",
         "isRequired": true,
         "choices": [
@@ -383,7 +383,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question30",
+        "name": "CH5",
         "title": "CH5. In the last 12 months, did (CHILD’S NAME/any of the children) ever skip meals because there wasn't enough money for food?\n",
         "isRequired": true,
         "choices": [
@@ -400,7 +400,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question31",
+        "name": "CH5a",
         "title": "CH5a. [IF YES ABOVE ASK] How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?\n\n",
         "choices": [
          "Almost every month",
@@ -420,7 +420,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question32",
+        "name": "CH6",
         "title": "CH6. In the last 12 months, (was your child/were the children) ever hungry but you just couldn't afford more food?",
         "isRequired": true,
         "choices": [
@@ -440,7 +440,7 @@
        },
        {
         "type": "radiogroup",
-        "name": "question33",
+        "name": "CH7",
         "title": "CH7. In the last 12 months, did (your child/any of the children) ever not eat for a whole day because there wasn't enough money for food?",
         "isRequired": true,
         "choices": [
@@ -525,7 +525,7 @@
        },
        {
         "type": "dropdown",
-        "name": "question43",
+        "name": "location",
         "title": "The location selected below should indicate your physical location                                      ",
         "isRequired": true,
         "choices": [
@@ -549,7 +549,7 @@
        },
        {
         "type": "text",
-        "name": "question44",
+        "name": "ZIP",
         "title": "ZIP",
         "isRequired": true
        }

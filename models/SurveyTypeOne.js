@@ -118,6 +118,14 @@
     CH7: {
         type: String,
 
+    },
+    location: {
+        type: String,
+
+    },
+    ZIP: {
+        type: String,
+
     }
 
  
