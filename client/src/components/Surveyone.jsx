@@ -39,7 +39,8 @@ const Surveyone = () => {
     async (sender) => {
         const result = sender.data
         // make request over here
-        const response = await axios.post('/api/v1/auth/survey' , {result})
+        console.log(result);
+        const response = await axios.post('/api/v1/survey' , {result})
         console.log(response);
 
     },
