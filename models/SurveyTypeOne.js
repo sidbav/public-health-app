@@ -25,13 +25,13 @@
 
     },
 
-    grade: {
+    score: {
         type: Number,
         required: true,
 
     },
 
-    surveyType: {
+    type: {
         type: String,
         required: true,
 

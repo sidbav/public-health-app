@@ -2,20 +2,25 @@ import mongoose from "mongoose";
  
  const SurveyTypeFourSchema = new mongoose.Schema({
 
-    userId: {
+    // userId: {
+    //     type: String,
+    //     required: true,
+    //     unique: true,
+
+    // },
+    type: {
         type: String,
         required: true,
-        unique: true,
 
     },
 
-    grade: {
+    score: {
         type: String,
         required: true,
 
     },
 
-    surveyType: {
+    surveyResult: {
         type: String,
         required: true,
 
@@ -32,56 +37,47 @@ import mongoose from "mongoose";
         unique: true,
        
     },
-    quesiton1: {
-         type: String,
+    question1: {
+         type: Array,
+    
         
      },
-     quesiton2: {
-         type: String,
+     question2: {
+        type: Array,      
      },
-     quesiton3:{
-         type: String,
+     question3:{
+        type: Array,
 
      },
  
-     quesiton4: {
-         type: String,
+     question4: {
+        type: Array,
 
      },
  
-     quesiton5: {
-         type: String,
+     question5: {
+        type: Array,    
 
      },
  
-     quesiton6: {
-         type: String,
+     question6: {
+        type: Array,
 
      },
-     quesiton7: {
-        type: String,
+     question7: {
+        type: Array,
 
      },
-     quesiton8: {
-        type: String,
+     question8: {
+        type: Array,   
 
     },
-    quesiton9: {
-        type: String,
+    question9: {
+        type: Array,   
 
     },
 
  
- },
- {
-     toJSON:{
-         transform (doc,ret){
-             delete ret.__v
-         }
-     }
  })
- 
- 
- 
- 
+
  export default mongoose.model('SurveyTypeFour',SurveyTypeFourSchema);

@@ -3,7 +3,7 @@ import { Survey } from 'survey-react-ui';
 import { useLocation } from 'react-router-dom'
 import { useCallback } from 'react';
 import 'survey-react/survey.css';
-import { surveyAdultFood , surveyHousehold} from '../utility/SurveyType';
+import { surveyAdultFood , surveyHousehold, surveyChildrenFood} from '../utility/SurveyType';
 import 'survey-core/defaultV2.min.css';
 import axios from 'axios'
 StylesManager.applyTheme("defaultV2");
@@ -18,6 +18,11 @@ const surveyType = (type)=>{
   }else if(type === "adult-food"){
 
     const survey = new Model(surveyAdultFood);
+    return survey
+
+  }else if(type === "children-food"){
+
+    const survey = new Model(surveyChildrenFood);
     return survey
 
   }
@@ -38,13 +43,13 @@ const Surveyone = () => {
   const surveyComplete = useCallback(
     async (sender) => {
         const result = sender.data
+        result.type = type
         // make request over here
         console.log(result);
         const response = await axios.post('/api/v1/survey' , {result})
         console.log(response);
 
     },
-    [],
   )
 
   survey.onComplete.add(surveyComplete);

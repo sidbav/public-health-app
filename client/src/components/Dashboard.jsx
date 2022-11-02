@@ -306,6 +306,7 @@ function Dashboard() {
                               </Tooltip>
                             }
                           >
+                            <Link to='/Surveyone' state={{ type: "children-food" }}>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
@@ -313,6 +314,7 @@ function Dashboard() {
                             >
                               <i className="fas fa-edit"></i>
                             </Button>
+                            </Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={
