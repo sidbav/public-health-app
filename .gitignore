@@ -1,7 +1,6 @@
 /node_modules
 .env
-/utils
-/models/Token.js
+models/Token.js
 
 
 
