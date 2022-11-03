@@ -63,18 +63,18 @@ router.post('/api/v1/auth/passwordReset', async (req, res) => {
         }
     });
 
-    // const isMatch = await bcryptjs.compare(newPassword, user.password);
-    // if (isMatch) {
-    //     throw new ValidationError("New password cannot be the same as old password");
-    // }
+    const isMatch = await bcryptjs.compare(newPassword, user.password);
+    if (isMatch) {
+        throw new ValidationError("New password cannot be the same as old password");
+    }
 
 
-    // // change the password in the database
-    // const hashedNewPassword = await bcryptjs.hash(newPassword, 10);
-    // await User.updateOne({ email }, { password: hashedNewPassword });
+    // change the password in the database
+    const hashedNewPassword = await bcryptjs.hash(newPassword, 10);
+    await User.updateOne({ email }, { password: hashedNewPassword });
 
-    // // send the response
-    // res.status(StatusCodes.OK).json({ success: true, data: "Password changed successfully" });
+    // send the response
+    res.status(StatusCodes.OK).json({ success: true, data: "Password changed successfully" });
     });
 
     export {router as passwordResetRouter};
