@@ -17,7 +17,7 @@ const router = express.Router();
 const __dirname = path.resolve();
 
 router.post('/api/v1/auth/passwordReset', async (req, res) => {
-    const { email } = req.body;
+    const { email, newPassword } = req.body;
 
     // check if user exists in the database
     const user = await User.findOne({ email });
