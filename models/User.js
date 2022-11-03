@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import brcyptjs from 'bcryptjs'
-import validator from "validator";
 import jsonwebtoken from 'jsonwebtoken'
 
 const UserSchema = new mongoose.Schema({

@@ -3,22 +3,21 @@ import express from 'express'
 import User from '../../models/User.js'
 import dotenv from 'dotenv'
 dotenv.config()
-import validator from 'validator'
 import ValidationError from '../../errors/validation-error.js'
 import { StatusCodes } from 'http-status-codes'
-const Token  = import('../../models/Token.js');
-const crypto = import('crypto');
-import bcryptjs from 'bcryptjs'
-const sendEmail = import("../../utils/email/sendEmail.cjs");
-import JWT from "jsonwebtoken";
+import Token from '../../models/Token.js';
+import crypto from 'crypto';
+import bcryptjs from 'bcryptjs';
+import nodemailer from 'nodemailer'
+import fs from 'fs'
+import handlebars from 'handlebars'
+import path from 'path'
 
-const clientURL = process.env.CLIENT_URL;
-
-// check if the user exists in the database before sending the reset password link
 const router = express.Router();
+const __dirname = path.resolve();
 
 router.post('/api/v1/auth/passwordReset', async (req, res) => {
-    const { email, newPassword } = req.body;
+    const { email } = req.body;
 
     // check if user exists in the database
     const user = await User.findOne({ email });
@@ -27,61 +26,55 @@ router.post('/api/v1/auth/passwordReset', async (req, res) => {
         throw new ValidationError("Email does not exist. Please register first");
     }
 
-    // // get reset token
-    // let resettoken = Token.findOne({ userId: user._id });
-    // if (resettoken) await resettoken.deleteOne();
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USERNAME, // your email address
+          pass: process.env.EMAIL_PASSWORD, // your password
+        },
+      });
 
-    // // generate token
-    // const resetToken = crypto.randomBytes(20).toString("hex");
-    // const hashedToken = await bcryptjs.hash(resetToken, 10);
+    const mailOptions = {
+        from: 'your email address',
+        to: email,
+        subject: 'Password Reset Request',
+        html: `
+        <html >
+        <head>
+            <meta charset="utf-8">
+         </head>
+        <body>
+            <p><h3>Hi ${user.firstName},</h3></p>
+            <p>You requested to reset your password.</p>
+            <p> Please, click the link below to reset your password</p>
+        </body>
+        </html>`
+    };
 
-    // // save token to database
-    // await new Token({
-    //     userId: user._id,
-    //     token: hashedToken,
-    //     createdAt: Date.now(),
-    // }).save();
-
-    // create reset url
-    //const resetUrl = `${clientURL}/passwordReset/${resetToken}`;
-
-    // const message = "You are receiving this email because you (or someone else) has requested the reset of a password. Please make a PUT request to: \n\n ${resetUrl}";
-
-    // try{ sendEmail(
-    //     user.email,
-    //     message,
-    //     {
-    //         name: user.name,
-    //         subject: "Password Reset",
-    //     },
-    //     "./template/requestResetPassword.handlebars"
-    // );} catch (error) {
-    //     console.log(error);
-    //     user.resetPasswordToken = undefined;
-    //     user.resetPasswordExpire = undefined;
-
-    //     await user.save({ validateBeforeSave: false });
-
-    //     throw new ValidationError("Email could not be sent");
-    // }
-
-    // res.status(StatusCodes.OK).json({ success: true, data: "Email sent" });
-
-
-    // check if the new password is the same as the old password
-    const isMatch = await bcryptjs.compare(newPassword, user.password);
-    if (isMatch) {
-        throw new ValidationError("New password cannot be the same as old password");
-    }
-
-
-    // change the password in the database
-    const hashedNewPassword = await bcryptjs.hash(newPassword, 10);
-    await User.updateOne({ email }, { password: hashedNewPassword });
-
-    // send the response
-    res.status(StatusCodes.OK).json({ success: true, data: "Password changed successfully" });
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+       console.log(error);
+       callback(error);
+        } else {
+          // do something useful
+          res.status(StatusCodes.CREATED).json({
+            message: " Reset Email sent",
+            });
+        }
     });
 
-    export {router as passwordResetRouter}
+    // const isMatch = await bcryptjs.compare(newPassword, user.password);
+    // if (isMatch) {
+    //     throw new ValidationError("New password cannot be the same as old password");
+    // }
 
+
+    // // change the password in the database
+    // const hashedNewPassword = await bcryptjs.hash(newPassword, 10);
+    // await User.updateOne({ email }, { password: hashedNewPassword });
+
+    // // send the response
+    // res.status(StatusCodes.OK).json({ success: true, data: "Password changed successfully" });
+    });
+
+    export {router as passwordResetRouter};
