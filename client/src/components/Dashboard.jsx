@@ -161,14 +161,17 @@ function Dashboard() {
                                 Start
                               </Tooltip>
                             }
-                          ><Link to='/Surveyone'>
-                            <Button
-                              className="btn-simple btn-link p-1"
-                              type="button"
-                              variant="info"
-                            >
+                          >
+                            <Link to='/Surveyone' state={{ type: "household-food" }}>
+                              <Button
+                                className="btn-simple btn-link p-1"
+                                type="button"
+                                variant="info"
+                              >
                               <i className="fas fa-edit"></i>
-                            </Button></Link>
+                            </Button>
+                            </Link>
+
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={
@@ -208,13 +211,16 @@ function Dashboard() {
                               </Tooltip>
                             }
                           >
+                            <Link to='/Surveyone' state={{ type: "adult-food" }}>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
                               variant="info"
                             >
+
                               <i className="fas fa-edit"></i>
                             </Button>
+                            </Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={
@@ -300,6 +306,7 @@ function Dashboard() {
                               </Tooltip>
                             }
                           >
+                            <Link to='/Surveyone' state={{ type: "children-food" }}>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
@@ -307,6 +314,7 @@ function Dashboard() {
                             >
                               <i className="fas fa-edit"></i>
                             </Button>
+                            </Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={
