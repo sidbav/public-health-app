@@ -5,14 +5,14 @@ import dotenv from 'dotenv'
 dotenv.config()
 import ValidationError from '../../errors/validation-error.js'
 import { StatusCodes } from 'http-status-codes'
-import Token from '../../models/Token.js';
+// import Token from '../../models/Token.js';
 import crypto from 'crypto';
 import bcryptjs from 'bcryptjs';
 import nodemailer from 'nodemailer'
 import path from 'path'
 
 const router = express.Router();
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 router.post('/api/v1/auth/passwordReset', async (req, res) => {
     const { email, newPassword } = req.body;
