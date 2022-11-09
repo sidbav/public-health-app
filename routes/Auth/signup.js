@@ -1,4 +1,3 @@
-
 import express from 'express'
 // import database Model
 import User from '../../models/User.js'
