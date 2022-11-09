@@ -3,7 +3,7 @@ import User from '../../models/User.js'
 import dotenv from 'dotenv'
 import ValidationError from '../../errors/validation-error.js'
 import { StatusCodes } from 'http-status-codes'
-// import Token from '../../models/Token.js';
+import Token from '../../models/Token.js';
 import crypto from 'crypto';
 import bcryptjs from 'bcryptjs';
 import nodemailer from 'nodemailer'
