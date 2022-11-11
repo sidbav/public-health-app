@@ -1527,3 +1527,300 @@ export const surveyHouseholdUpdate ={
       ]
      
 }
+
+export const surveyAdultFoodUpdate = {
+   "title": "U.S. Adult Food Security Survey",
+   "logoPosition": "right",
+   "pages": [
+    {
+     "name": "page1",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_1",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">These next questions are about the food eaten in your household in the last 12 months, since November&nbsp;of last year and whether you were able to afford the food you need.</span></p>\n</body>\n</html>"
+      },
+      {
+       "type": "checkbox",
+       "name": "HH1",
+       "title": "Which of these statements best describes the food eaten in your household in the last 12 months?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Enough of the kinds of food we want to eat"
+        },
+        {
+         "value": "item2",
+         "text": "Enough, but not always the kinds of food we want"
+        },
+        {
+         "value": "item3",
+         "text": "Sometimes not enough to eat"
+        },
+        {
+         "value": "item4",
+         "text": "Often not enough to eat"
+        },
+        {
+         "value": "item5",
+         "text": "I don't know, or I refuse to answer"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ]
+    },
+    {
+     "name": "page2",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_2",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">Next, please tell me whether the statement was <u>often</u> true, <u>sometimes</u> true, or <u>never</u> true for your household&nbsp;in the last 12 months&mdash;that is, since last November.</span></p>\n</body>\n</html>"
+      },
+      {
+       "type": "checkbox",
+       "name": "HH2",
+       "title": "“We worried whether our food would run out before we got money to buy more.”  Was that often true, sometimes true, or never true for your household in the last 12 months?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Often true"
+        },
+        {
+         "value": "item2",
+         "text": "Sometimes true"
+        },
+        {
+         "value": "item3",
+         "text": "Never true"
+        },
+        {
+         "value": "item4",
+         "text": "I don't know, or I refuse to answer"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "HH3",
+       "title": "“The food that we bought just didn’t last, and we didn’t have money to get  more.”  Was that often, sometimes, or never true for your household in the last 12 months?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Often true"
+        },
+        {
+         "value": "item2",
+         "text": "Sometimes true"
+        },
+        {
+         "value": "item3",
+         "text": "Never true"
+        },
+        {
+         "value": "item4",
+         "text": "I don't know, or I refuse to answer"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "HH4",
+       "title": "“We couldn’t afford to eat balanced meals.”   Was that often, sometimes, or never true for your household in the last 12 months?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Often true"
+        },
+        {
+         "value": "item2",
+         "text": "Sometimes true"
+        },
+        {
+         "value": "item3",
+         "text": "Never true"
+        },
+        {
+         "value": "item4",
+         "text": "I don't know, or I refuse to answer"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ]
+    },
+    {
+     "name": "page_AD",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "AD1",
+       "title": "In the last 12 months, since last November, did you or other adults in your household ever cut the size of your meals or skip meals because there wasn't enough money for food?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Yes"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "I don't know"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD1a",
+       "visibleIf": "{AD1} = ['item1']",
+       "title": "How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Almost every month"
+        },
+        {
+         "value": "item2",
+         "text": "Some months but not every month"
+        },
+        {
+         "value": "item3",
+         "text": "Only 1 or 2 months"
+        },
+        {
+         "value": "item4",
+         "text": "I don't know"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD2",
+       "title": "In the last 12 months, did you ever eat less than you felt you should because there wasn't enough money for food?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Yes"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "I don't know"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD3",
+       "title": "In the last 12 months, were you every hungry but didn't eat because there wasn't enough money for food?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Yes"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "I don't know"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD4",
+       "title": "In the last 12 months, did you lose weight because there wasn't enough money for food?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Yes"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "I don't know"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{HH2} anyof ['item1', 'item2'] or {HH3} anyof ['item1', 'item2'] or {HH4} anyof ['item1', 'item2'] or {HH1} anyof ['item3', 'item4']"
+    },
+    {
+     "name": "page_AD_2",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "AD5",
+       "title": "In the last 12 months, did you or other adults in your household ever not eat for a whole day because there wasn't enough money for food?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Yes"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "I don't know"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD5a",
+       "visibleIf": "{AD5} = ['item1']",
+       "title": "How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Almost every month"
+        },
+        {
+         "value": "item2",
+         "text": "Some months but not every month"
+        },
+        {
+         "value": "item3",
+         "text": "Only 1 or 2 months"
+        },
+        {
+         "value": "item4",
+         "text": "I don't know"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{AD1} = ['item1'] or {AD2} = ['item1'] or {AD3} = ['item1'] or {AD4} = ['item1']"
+    }
+   ]
+}
