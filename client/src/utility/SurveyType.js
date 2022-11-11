@@ -1984,3 +1984,508 @@ export const surveyShort = {
       }
    ]
 }
+
+export const surveyHouseholdSpanish = {
+   "title": "Encuesta sobre la seguridad alimentaria de los hogares de EE.UU.",
+   "logoPosition": "right",
+   "pages": [
+    {
+     "name": "page1",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_1",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">Las siguientes preguntas tratan sobre los alimentos consumidos en su hogar durante los &uacute;ltimos 12 meses, desde Noviembre del a&ntilde;o pasado, y su capacidad para comprar la comida que se necesitaba.</span></p>\n</body>\n</html>"
+      },
+      {
+       "type": "boolean",
+       "name": "bool_children",
+       "title": "¿Tiene hijos menores de 18 años en su hogar?",
+       "isRequired": true,
+       "labelTrue": "Sí"
+      },
+      {
+       "type": "checkbox",
+       "name": "HH1",
+       "title": "¿Cuál de las siguentes declaraciones describe mejor la situación alimentaria en su hogar en los últimos 12 meses?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Siempre comemos lo suficiente y los tipos de alimentos que deseamos"
+        },
+        {
+         "value": "item2",
+         "text": "Comemos lo suficiente pero no siempre lo que deseamos"
+        },
+        {
+         "value": "item3",
+         "text": "A veces no comemos lo suficiente o"
+        },
+        {
+         "value": "item4",
+         "text": "Frecuentemente no comemos lo suficiente"
+        },
+        {
+         "value": "item5",
+         "text": "No sé, o me niego a responder"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ]
+    },
+    {
+     "name": "page2",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_2",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">Ahora le voy a leer algunas declaraciones que las personas han hecho sobre situaci&oacute;nes alimentarias. Para cada uno, favor de indicar si ha ocurrido frecuentemente, a veces, o nunca en su hogar en los &uacute;ltimos 12 meses, dese Noviembre del a&ntilde;o pasado.</span></p>\n</body>\n</html>"
+      },
+      {
+       "type": "checkbox",
+       "name": "HH2",
+       "title": "“Nos preocupamos que la comida se podía acabar antes de tener dinero para comprar más.” En su hogar, ¿ésto ocurrió frecuentemente, a veces, o nunca en los últimos 12 meses?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Frecuentemente"
+        },
+        {
+         "value": "item2",
+         "text": "A veces"
+        },
+        {
+         "value": "item3",
+         "text": "Nunca"
+        },
+        {
+         "value": "item4",
+         "text": "No sé, o me niego a responder"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "HH3",
+       "title": "La comida que compramos no rindió lo suficiente, y no teníamos dinero para comprar más.\" En su hogar, ¿ésto ocurrió frecuentemente, a veces, o nunca en los últimos 12 meses?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Frecuentemente"
+        },
+        {
+         "value": "item2",
+         "text": "A veces"
+        },
+        {
+         "value": "item3",
+         "text": "Nunca"
+        },
+        {
+         "value": "item4",
+         "text": "No sé, o me niego a responder"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "HH4",
+       "title": "“No teníamos recursos suficientes para comer comida variada y nutritiva.” En su hogar, ¿ésto ocurrió frecuentemente, a veces, o nunca en los últimos 12 meses?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Frecuentemente"
+        },
+        {
+         "value": "item2",
+         "text": "A veces"
+        },
+        {
+         "value": "item3",
+         "text": "Nunca"
+        },
+        {
+         "value": "item4",
+         "text": "No sé, o me niego a responder"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ]
+    },
+    {
+     "name": "page_AD",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "AD1",
+       "title": "En los últimos 12 meses, ¿Ud. u otro adulto del hogar redujo alguna vez la cantidad de sus comidas o dejó de desayunar, almorzar o cenar porque le faltaba dinero para alimentos?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD1a",
+       "visibleIf": "{AD1} = ['item1']",
+       "title": "¿Con qué frecuencia sucedió esto? Casi todos los meses, algunos meses pero no todos, o solamente en 1 ó 2 meses?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Casi todos los meses"
+        },
+        {
+         "value": "item2",
+         "text": "Algunos meses pero no todos"
+        },
+        {
+         "value": "item3",
+         "text": "Solamente en 1 ó 2 meses"
+        },
+        {
+         "value": "item4",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD2",
+       "title": "En los últimos 12 meses, ¿comió Ud. alguna vez menos de lo que pensaba que debía comer porque le faltaba dinero para alimentos?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD3",
+       "title": "En los últimos 12 meses, ¿Tuvo Ud. hambre alguna vez pero no comió porque le faltaba dinero para alimentos?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD4",
+       "title": "En los últimos 12 meses, ¿Perdió Ud. peso porque no comió los alimentos suficientes por falta de dinero para comida?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{HH2} anyof ['item1', 'item2'] or {HH3} anyof ['item1', 'item2'] or {HH4} anyof ['item1', 'item2'] or {HH1} anyof ['item3', 'item4']"
+    },
+    {
+     "name": "page_AD_2",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "AD5",
+       "title": "En los últimos 12 meses, ¿alguna vez no comió Ud. u otro adulto del hogar en todo el día porque le faltaba dinero para comida?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD5a",
+       "visibleIf": "{AD5} = ['item1']",
+       "title": "¿Con qué frecuencia sucedió esto? Casi todos los meses, algunos meses pero no todos, o solamente en 1 ó 2 meses?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Casi todos los meses"
+        },
+        {
+         "value": "item2",
+         "text": "Algunos meses pero no todos"
+        },
+        {
+         "value": "item3",
+         "text": "Solamente en 1 ó 2 meses"
+        },
+        {
+         "value": "item4",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{AD1} = ['item1'] or {AD2} = ['item1'] or {AD3} = ['item1'] or {AD4} = ['item1']"
+    },
+    {
+     "name": "page_CH",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_CH",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">Ahora le voy a leer algunas declaraciones que las personas han hecho sobre la situaci&oacute;n alimentaria de sus ni&ntilde;os. Para cada uno, favor de indicar si ocurri&oacute; frecuentemente, algunas veces, o nunca en los &uacute;ltimos 12 meses a ni&ntilde;os o j&oacute;venes menores de 18 a&ntilde;os que viven en su hogar.</span></p>\n</body>\n</html>"
+      },
+      {
+       "type": "checkbox",
+       "name": "CH1",
+       "title": "“Tuvimos que alimentar a los niños o jóvenes del hogar con alimentos de poca variedad y bajo costo porque se nos acababa dinero para alimentos.” En su hogar, ¿ésto ocurrió frecuentemente, a veces, o nunca en los últimos 12 meses?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Frecuentemente"
+        },
+        {
+         "value": "item2",
+         "text": "A veces"
+        },
+        {
+         "value": "item3",
+         "text": "Nunca"
+        },
+        {
+         "value": "item4",
+         "text": "No sé, o me niego a responder"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH2",
+       "title": "“No pudimos alimentar a los niños o jóvenes del hogar con comida variada y nutritiva porque nos faltaba dinero para alimentos.” En su hogar, ¿ésto ocurrió frecuentemente, a veces, o nunca en los últimos 12 meses?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Frecuentemente"
+        },
+        {
+         "value": "item2",
+         "text": "A veces"
+        },
+        {
+         "value": "item3",
+         "text": "Nunca"
+        },
+        {
+         "value": "item4",
+         "text": "No sé, o me niego a responder"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH3",
+       "title": "“Los niños or jóvenes del hogar no comían lo suficiente porque nos faltaba dinero para comprar alimentos.” En su hogar, ¿ésto ocurrió frecuentemente, a veces, o nunca en los últimos 12 meses?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Frecuentemente"
+        },
+        {
+         "value": "item2",
+         "text": "A veces"
+        },
+        {
+         "value": "item3",
+         "text": "Nunca"
+        },
+        {
+         "value": "item4",
+         "text": "No sé, o me niego a responder"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{bool_children} = true"
+    },
+    {
+     "name": "page_CH_2",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "CH4",
+       "title": "En los últimos 12 meses, ¿Reducieron alguna vez la cantidad de la comida de un niño o joven del hogar por falta de dinero para comprar alimentos?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH5",
+       "title": "En los últimos 12 meses, ¿alguna vez algun niño o joven del hogar dejó de desayunar, almorzar o cenar por falta de dinero para alimentos?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH5a",
+       "visibleIf": "{CH5} = ['item1']",
+       "title": "¿Con qué frecuencia sucedió esto? Casi todos los meses, algunos meses pero no todos, o solamente en 1 ó 2 meses?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Casi todos los meses"
+        },
+        {
+         "value": "item2",
+         "text": "Algunos meses pero no todos"
+        },
+        {
+         "value": "item3",
+         "text": "Solamente en 1 ó 2 meses"
+        },
+        {
+         "value": "item4",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH6",
+       "title": "En los últimos 12 meses, ¿alguna vez, un niño o joven del hogar tuvo hambre pero faltaba dinero para comprar más alimentos?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH7",
+       "title": "En los últimos 12 meses, ¿alguna vez un niño o joven del hogar no comió en todo el día porque faltaba dinero para alimentos?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "Sí"
+        },
+        {
+         "value": "item2",
+         "text": "No"
+        },
+        {
+         "value": "item3",
+         "text": "No sé"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{CH1} anyof ['item2', 'item1'] or {CH2} anyof ['item1', 'item2'] or {CH3} anyof ['item1', 'item2']"
+    }
+   ]
+}
