@@ -2489,3 +2489,509 @@ export const surveyHouseholdSpanish = {
     }
    ]
 }
+
+export const surveyHouseholdChinese = {
+   "title": "美国家庭食物安全调查",
+   "logoPosition": "right",
+   "pages": [
+    {
+     "name": "page1",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_1",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">以下的問題是關於你的家庭在過去的12個月內，即從去年11月起，所吃的食物，以及關於你是否能夠負擔你所需要的食物。</span></p>\n</body>\n</html>"
+      },
+      {
+       "type": "boolean",
+       "name": "bool_children",
+       "title": "您家中有 18 歲以下的孩子嗎？",
+       "isRequired": true,
+       "labelTrue": "有",
+       "labelFalse": "沒有"
+      },
+      {
+       "type": "checkbox",
+       "name": "HH1",
+       "title": "以下的句子，哪一句用來形容你的家庭在過去的12個月內所吃的食物，是最適合的﹖",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有足夠我們想吃的食物"
+        },
+        {
+         "value": "item2",
+         "text": "有足夠的食物，但這些食物不一定都是我們想吃的種類"
+        },
+        {
+         "value": "item3",
+         "text": "有時候沒有足夠的食物"
+        },
+        {
+         "value": "item4",
+         "text": "經常沒有足夠的食物"
+        },
+        {
+         "value": "item5",
+         "text": "不知道或拒絕回答"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ]
+    },
+    {
+     "name": "page2",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_2",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">根據這些句子，請你告訴我句子中形容的狀況，在過去的12個月中，即是從去年11月起，是經常發生,有時候發生,還是從來沒有發生在你/你家人身上。</span></p>\n</body>\n</html>"
+      },
+      {
+       "type": "checkbox",
+       "name": "HH2",
+       "title": "「我們擔心在有錢去買更多食物之前，所有的食物已經吃完了。」在過去的12個月中，這種情況是經常發生,有時候發生,還是從來沒有發生在你/你家人身上呢?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "經常發生"
+        },
+        {
+         "value": "item2",
+         "text": "有時候發生"
+        },
+        {
+         "value": "item3",
+         "text": "從來沒有發生"
+        },
+        {
+         "value": "item4",
+         "text": "不知道或拒絕回答"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "HH3",
+       "title": "「我們購買的食物不夠，而且沒有錢去買更多的食物。」在過去的12個月中，這種情況是經常發生,有時候發生,還是從來沒有發生在你/你家人身上呢?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "經常發生"
+        },
+        {
+         "value": "item2",
+         "text": "有時候發生"
+        },
+        {
+         "value": "item3",
+         "text": "從來沒有發生"
+        },
+        {
+         "value": "item4",
+         "text": "不知道或拒絕回答"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "HH4",
+       "title": "「我們無法負擔均衡的飲食。」在過去的12個月中，這種情況是經常發生,有時候發生,還是從來沒有發生在你/你家人身上呢?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "經常發生"
+        },
+        {
+         "value": "item2",
+         "text": "有時候發生"
+        },
+        {
+         "value": "item3",
+         "text": "從來沒有發生"
+        },
+        {
+         "value": "item4",
+         "text": "不知道或拒絕回答"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ]
+    },
+    {
+     "name": "page_AD",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "AD1",
+       "title": "在過去的12個月中，即是從去年11月起，你/你家中的其他成年人，有沒有因為不夠錢購買食物，而減少食物的份量，或者減少餐數？",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD1a",
+       "visibleIf": "{AD1} = ['item1']",
+       "title": "這種情況多久發生一次?-幾乎每個月,有些月份但不是每個月,還是只是1個月或2個月呢?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "幾乎每個月"
+        },
+        {
+         "value": "item2",
+         "text": "有些月份，但不是每個月"
+        },
+        {
+         "value": "item3",
+         "text": "只是1個月或2個月"
+        },
+        {
+         "value": "item4",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD2",
+       "title": "在過去的12個月中，你有沒有因為不夠錢購買食物，而吃得比你該吃的少？",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD3",
+       "title": "在過去的12個月中，你有沒有因為不夠錢購買食物，而感到飢餓但沒有進食?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD4",
+       "title": "在過去的12個月中，你有沒有因為不夠錢購買食物，而導致體重下降?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{HH2} anyof ['item1', 'item2'] or {HH3} anyof ['item1', 'item2'] or {HH4} anyof ['item1', 'item2'] or {HH1} anyof ['item3', 'item4']"
+    },
+    {
+     "name": "page_AD_2",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "AD5",
+       "title": "在過去的12個月中，你/你家中的其他成年人，你有沒有因為不夠錢購買食物，而一整天沒有進食?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "AD5a",
+       "visibleIf": "{AD5} = ['item1']",
+       "title": "這種情況多久發生一次?-幾乎每個月,有些月份但不是每個月,還是只是1個月或2個月呢?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "幾乎每個月"
+        },
+        {
+         "value": "item2",
+         "text": "有些月份，但不是每個月"
+        },
+        {
+         "value": "item3",
+         "text": "只是1個月或2個月"
+        },
+        {
+         "value": "item4",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{AD1} = ['item1'] or {AD2} = ['item1'] or {AD3} = ['item1'] or {AD4} = ['item1']"
+    },
+    {
+     "name": "page_CH",
+     "elements": [
+      {
+       "type": "html",
+       "name": "Intro_CH",
+       "html": "<html>\n<head>\n\t<title></title>\n</head>\n<body>\n<p><span style=\"font-size:18px;\">現在我們會問你幾句句子，是關於家裏孩子的糧食狀況。 根據這些句子，請你想一想句子中形容的狀況，在過去的12個月中，是經常發生,有時候發生,還是從來沒有發生在你家中18歲以下的孩子身上</span>。</p>\n</body>\n</html>"
+      },
+      {
+       "type": "checkbox",
+       "name": "CH1",
+       "title": "「因為我們快沒有錢買食物，所以我們唯有依靠幾種便宜的食物來餵我們小孩。」在過去的12個月中，這種情況是經常發生,有時候發生,還是從來沒有發生在你/你家人身上呢?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "經常發生"
+        },
+        {
+         "value": "item2",
+         "text": "有時候發生"
+        },
+        {
+         "value": "item3",
+         "text": "從來沒有發生"
+        },
+        {
+         "value": "item4",
+         "text": "不知道或拒絕回答"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH2",
+       "title": "「因為我們無法負擔均衡的飲食，所以(我/我們)無法用均衡的飲食來餵我們的小孩。」在過去的12個月中，這種情況是經常發生,有時候發生,還是從來沒有發生在你/你家人身上呢?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "經常發生"
+        },
+        {
+         "value": "item2",
+         "text": "有時候發生"
+        },
+        {
+         "value": "item3",
+         "text": "從來沒有發生"
+        },
+        {
+         "value": "item4",
+         "text": "不知道或拒絕回答"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH3",
+       "title": "「因為我們無法負擔足夠的食物，所以我們的小孩吃得不夠。」在過去的12個月中，這種情況是經常發生,有時候發生,還是從來沒有發生在你/你家人身上呢?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "經常發生"
+        },
+        {
+         "value": "item2",
+         "text": "有時候發生"
+        },
+        {
+         "value": "item3",
+         "text": "從來沒有發生"
+        },
+        {
+         "value": "item4",
+         "text": "不知道或拒絕回答"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{bool_children} = true"
+    },
+    {
+     "name": "page_CH_2",
+     "elements": [
+      {
+       "type": "checkbox",
+       "name": "CH4",
+       "title": "在過去的12個月中，即是從去年11月起，你有沒有因為不夠錢購買食物，而減少你小孩的食物份量？",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH5",
+       "title": "在過去的12個月中，有沒有因為你不夠錢購買食物，而導致小孩的用餐次數減少了？",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH5a",
+       "visibleIf": "{CH5} = ['item1']",
+       "title": "這種情況多久發生一次?-幾乎每個月,有些月份但不是每個月,還是只是1個月或2個月呢?",
+       "choices": [
+        {
+         "value": "item1",
+         "text": "幾乎每個月"
+        },
+        {
+         "value": "item2",
+         "text": "有些月份，但不是每個月"
+        },
+        {
+         "value": "item3",
+         "text": "只是1個月或2個月"
+        },
+        {
+         "value": "item4",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH6",
+       "title": "在過去的12個月中，有沒有你的小孩感到飢餓，但是你無法負擔更多的食物?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      },
+      {
+       "type": "checkbox",
+       "name": "CH7",
+       "title": "在過去的12個月中，有沒有因為你不夠錢購買食物，而導致小孩一整天沒有進食?",
+       "isRequired": true,
+       "choices": [
+        {
+         "value": "item1",
+         "text": "有"
+        },
+        {
+         "value": "item2",
+         "text": "沒有"
+        },
+        {
+         "value": "item3",
+         "text": "不知道"
+        }
+       ],
+       "maxSelectedChoices": 1
+      }
+     ],
+     "visibleIf": "{CH1} anyof ['item2', 'item1'] or {CH2} anyof ['item1', 'item2'] or {CH3} anyof ['item1', 'item2']"
+    }
+   ]
+}
