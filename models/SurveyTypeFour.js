@@ -1,13 +1,12 @@
 import mongoose from "mongoose";
- 
+
  const SurveyTypeFourSchema = new mongoose.Schema({
 
-    // userId: {
-    //     type: String,
-    //     required: true,
-    //     unique: true,
+    createdBy: {
+        type: mongoose.Types.ObjectId,
+        ref : 'User',
 
-    // },
+    },
     type: {
         type: String,
         required: true,
@@ -29,37 +28,37 @@ import mongoose from "mongoose";
         type: Number,
         required: true,
         unique: true,
-       
+
     },
     surveyDate: {
         type: Date,
         required: true,
         unique: true,
-       
+
     },
     question1: {
          type: Array,
-    
-        
+
+
      },
      question2: {
-        type: Array,      
+        type: Array,
      },
      question3:{
         type: Array,
 
      },
- 
+
      question4: {
         type: Array,
 
      },
- 
+
      question5: {
-        type: Array,    
+        type: Array,
 
      },
- 
+
      question6: {
         type: Array,
 
@@ -69,15 +68,15 @@ import mongoose from "mongoose";
 
      },
      question8: {
-        type: Array,   
+        type: Array,
 
     },
     question9: {
-        type: Array,   
+        type: Array,
 
     },
 
- 
+
  })
 
  export default mongoose.model('SurveyTypeFour',SurveyTypeFourSchema);

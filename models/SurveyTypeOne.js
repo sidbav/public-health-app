@@ -15,15 +15,13 @@
 
  */
  import mongoose from "mongoose";
- 
+
  const SurveyTypeOneSchema = new mongoose.Schema({
 
-    // userId: {
-    //     type: String,
-    //     required: true,
-    //     unique: true,
-
-    // },
+    createdBy: {
+        type: mongoose.Types.ObjectId,
+        ref : 'User',
+    },
 
     type: {
         type: String,
@@ -46,18 +44,18 @@
         type: Number,
         required: true,
         unique: true,
-       
+
     },
     surveyDate: {
         type: Date,
         required: true,
         unique: true,
-       
+
     },
 
      HH2: {
          type: Array,
-        
+
      },
      HH3: {
          type: Array,
@@ -71,12 +69,12 @@
          type: Array,
 
      },
- 
+
      AD1a: {
          type: Array,
 
      },
- 
+
      AD2: {
          type: Array,
 
@@ -129,11 +127,11 @@
         type: Array,
 
     }
- 
+
  },
  )
- 
- 
- 
- 
+
+
+
+
  export default mongoose.model('SurveyTypeOne',SurveyTypeOneSchema);
