@@ -188,6 +188,55 @@ function Dashboard() {
                           </OverlayTrigger>
                         </td>
                       </tr>
+                      {/* <tr>
+                        <td>
+                          <Form.Check className="mb-1 pl-0">
+                            <Form.Check.Label>
+                              <Form.Check.Input
+                                defaultValue=""
+                                type="checkbox"
+                              ></Form.Check.Input>
+                              <span className="form-check-sign"></span>
+                            </Form.Check.Label>
+                          </Form.Check>
+                        </td>
+                         <td>
+                        U.S. Children Food Security Survey
+                        </td>
+                        <td className="td-actions text-right">
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-537440761">
+                                Start
+                              </Tooltip>
+                            }
+                          >
+                            <Link to='/Surveyone' state={{ type: "children-food" }}>
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="info"
+                            >
+
+                              <i className="fas fa-edit"></i>
+                            </Button>
+                            </Link>
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="tooltip-21130535">Remove..</Tooltip>
+                            }
+                          >
+                            <Button
+                              className="btn-simple btn-link p-1"
+                              type="button"
+                              variant="danger"
+                            >
+                              <i className="fas fa-times"></i>
+                            </Button>
+                          </OverlayTrigger> 
+                        </td>
+                      </tr> */}
                       <tr>
                         <td>
                           <Form.Check className="mb-1 pl-0">
@@ -260,6 +309,7 @@ function Dashboard() {
                               </Tooltip>
                             }
                           >
+                            <Link to='/Surveyone' state={{ type: "short-survey" }}>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
@@ -267,6 +317,7 @@ function Dashboard() {
                             >
                               <i className="fas fa-edit"></i>
                             </Button>
+                            </Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={
@@ -354,6 +405,7 @@ function Dashboard() {
                               </Tooltip>
                             }
                           >
+                            <Link to='/Surveyone' state={{ type: "household-food-spanish" }}>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
@@ -361,6 +413,7 @@ function Dashboard() {
                             >
                               <i className="fas fa-edit"></i>
                             </Button>
+                            </Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={
@@ -400,6 +453,7 @@ function Dashboard() {
                               </Tooltip>
                             }
                           >
+                            <Link to='/Surveyone' state={{ type: "household-food-chinese" }}>
                             <Button
                               className="btn-simple btn-link p-1"
                               type="button"
@@ -407,6 +461,7 @@ function Dashboard() {
                             >
                               <i className="fas fa-edit"></i>
                             </Button>
+                            </Link>
                           </OverlayTrigger>
                           <OverlayTrigger
                             overlay={

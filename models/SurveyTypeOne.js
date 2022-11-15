@@ -15,13 +15,17 @@
 
  */
  import mongoose from "mongoose";
- 
+
  const SurveyTypeOneSchema = new mongoose.Schema({
 
-    userId: {
+    createdBy: {
+        type: mongoose.Types.ObjectId,
+        ref : 'User',
+    },
+
+    type: {
         type: String,
         required: true,
-        unique: true,
 
     },
 
@@ -31,7 +35,7 @@
 
     },
 
-    type: {
+    surveyResult: {
         type: String,
         required: true,
 
@@ -40,99 +44,94 @@
         type: Number,
         required: true,
         unique: true,
-       
+
     },
     surveyDate: {
         type: Date,
         required: true,
         unique: true,
-       
+
     },
 
      HH2: {
-         type: String,
-        
+         type: Array,
+
      },
      HH3: {
-         type: String,
+         type: Array,
      },
      HH4:{
-         type: String,
+         type: Array,
 
      },
- 
+
      AD1: {
-         type: String,
+         type: Array,
 
      },
- 
+
      AD1a: {
-         type: String,
+         type: Array,
 
      },
- 
+
      AD2: {
-         type: String,
+         type: Array,
 
      },
      AD3: {
-        type: String,
+        type: Array,
 
      },
     AD4: {
-        type: String,
+        type: Array,
 
     },
     AD5: {
-        type: String,
+        type: Array,
 
     },
     AD5a: {
-        type: String,
+        type: Array,
 
     },
     CH1: {
-        type: String,
+        type: Array,
 
     },
     CH2: {
-        type: String,
+        type: Array,
 
     },
     CH3: {
-        type: String,
+        type: Array,
 
     },
     CH4: {
-        type: String,
+        type: Array,
 
     },
     CH5: {
-        type: String,
+        type: Array,
+
+    },
+    CH5a: {
+        type: Array,
 
     },
     CH6: {
-        type: String,
+        type: Array,
 
     },
     CH7: {
-        type: String,
-
-    },
-    location: {
-        type: String,
-
-    },
-    ZIP: {
-        type: String,
+        type: Array,
 
     }
 
- 
  },
  )
- 
- 
- 
- 
+
+
+
+
  export default mongoose.model('SurveyTypeOne',SurveyTypeOneSchema);

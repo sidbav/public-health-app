@@ -1,12 +1,24 @@
+
+// import redux related
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+
+import { logout } from '../redux/actions/auth';
 import { Model , StylesManager} from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { useLocation } from 'react-router-dom'
 import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import 'survey-react/survey.css';
-import { surveyAdultFood , surveyHousehold, surveyChildrenFood} from '../utility/SurveyType';
+import { surveyAdultFood , surveyHousehold, surveyChildrenFood, surveyShort,surveyHouseholdSpanish,surveyHouseholdChinese } from '../utility/SurveyType';
 import 'survey-core/defaultV2.min.css';
 import axios from 'axios'
 StylesManager.applyTheme("defaultV2");
+
+
+
 
 
 const surveyType = (type)=>{
@@ -25,13 +37,31 @@ const surveyType = (type)=>{
     const survey = new Model(surveyChildrenFood);
     return survey
 
+  }else if(type === "short-survey"){
+
+    const survey = new Model(surveyShort);
+    return survey
+
+  }
+  else if(type === "household-food-chinese"){
+
+    const survey = new Model(surveyHouseholdChinese);
+    return survey
+
+  }
+  else if(type === "household-food-spanish"){
+
+    const survey = new Model(surveyHouseholdSpanish);
+    return survey
+
   }
 
 }
 
 
-const Surveyone = () => {
+const Surveyone = ({token, logout}) => {
 
+  const navigate = useNavigate()
   const location = useLocation()
   // extract the type of survey
   const { type } = location.state
@@ -46,16 +76,72 @@ const Surveyone = () => {
         result.type = type
         // make request over here
         console.log(result);
-        const response = await axios.post('/api/v1/survey' , {result})
+
+
+        const authFetch = axios.create({
+            baseURL : '/api/v1/'
+        });
+
+        authFetch.interceptors.request.use(
+          (config) => {
+            config.headers.common['Authorization'] = `Bearer ${token}`
+            return config
+          },
+          (error)=>{
+            return Promise.reject(error)
+          }
+
+        )
+
+        authFetch.interceptors.response.use(
+          (response) => {
+            return response
+          },
+          (error) => {
+            if (error.response.status == 401){
+                // logout user if
+                logout();
+                navigate('/profile');
+
+
+
+            }
+            return Promise.reject(error);
+          }
+
+
+        )
+
+        //const response = await axios.post('/api/v1/survey' , {result})
+        const response = await authFetch.post('/survey',{result});
+
+
+
         console.log(response);
 
     },
   )
 
   survey.onComplete.add(surveyComplete);
+  navigate('/profile');
+
   return <Survey model={survey} />;
 }
 
-export default Surveyone
+
+
+Surveyone.propTypes = {
+  logout: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => {
+  return {
+      token: state.auth.token,
+  }
+
+}
+
+
+export default connect(mapStateToProps , {logout})(Surveyone)
 
 
