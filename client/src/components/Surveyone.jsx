@@ -12,7 +12,7 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import 'survey-react/survey.css';
-import { surveyAdultFood , surveyHousehold, surveyChildrenFood} from '../utility/SurveyType';
+import { surveyAdultFood , surveyHousehold, surveyChildrenFood, surveyShort,surveyHouseholdSpanish,surveyHouseholdChinese } from '../utility/SurveyType';
 import 'survey-core/defaultV2.min.css';
 import axios from 'axios'
 StylesManager.applyTheme("defaultV2");
@@ -35,6 +35,23 @@ const surveyType = (type)=>{
   }else if(type === "children-food"){
 
     const survey = new Model(surveyChildrenFood);
+    return survey
+
+  }else if(type === "short-survey"){
+
+    const survey = new Model(surveyShort);
+    return survey
+
+  }
+  else if(type === "household-food-chinese"){
+
+    const survey = new Model(surveyHouseholdChinese);
+    return survey
+
+  }
+  else if(type === "household-food-spanish"){
+
+    const survey = new Model(surveyHouseholdSpanish);
     return survey
 
   }
