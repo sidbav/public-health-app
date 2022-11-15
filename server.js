@@ -24,11 +24,11 @@ const start = async () => {
     await connectDB(process.env.MONGO_URL);
 }
 
-// const __dirname = dirname(fileURLToPath(import.meta.url))
-// app.use(express.static(path.resolve(__dirname,'./client/build')))
-// app.get('*' , (req,res)=>{
-//     res.sendFile(path.resolve(__dirname ,'./client/build','index.html'))
-// })
+const __dirname = dirname(fileURLToPath(import.meta.url))
+app.use(express.static(path.resolve(__dirname,'./client/build')))
+app.get('*' , (req,res)=>{
+    res.sendFile(path.resolve(__dirname ,'./client/build','index.html'))
+})
 
 console.log('test')
 
