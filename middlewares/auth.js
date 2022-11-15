@@ -8,7 +8,7 @@ const auth = async (req,res,next) => {
     // To extract the jwt from the header
     const authHeader = req.headers.authorization
     if (!authHeader || !authHeader.startsWith('Bearer')){
-        throw new UnthenticatedError('Authentication Invalid')
+        throw new UnthenticatedError('Authentication Invalid1')
     }
 
     // extract from token
@@ -20,7 +20,7 @@ const auth = async (req,res,next) => {
         next()
 
     } catch (error) {
-        throw new UnthenticatedError('Authentication Invalid');
+        throw new UnthenticatedError('Authentication Invalid2');
     }
 }
 

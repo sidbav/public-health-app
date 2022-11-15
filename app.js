@@ -16,7 +16,7 @@ app.use(cors())
 app.use(express.json());
 app.use(LoginRouter);
 app.use(SignupRouter);
-app.use(auth,SurveryRouter);
+app.use(SurveryRouter);
 app.use(passwordResetRouter);
 app.use(errorHandlerMiddle)
 
