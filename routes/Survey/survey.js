@@ -3,12 +3,12 @@ import express from 'express'
 
 import SurveyTypeOne from '../../models/SurveyTypeOne.js'
 import SurveyTypeFour from '../../models/SurveyTypeFour.js'
-
+import auth from './middlewares/auth.js';
 
 
 // controller for survey
 const router = express.Router();
-router.post('/api/v1/survey',async (req,res) =>{
+router.post('/api/v1/survey',auth,async (req,res) =>{
     var score = 0
     var surveyResult = ''
     const surveyDate = new Date();
@@ -19,7 +19,7 @@ router.post('/api/v1/survey',async (req,res) =>{
     const { type } = req.body.result
     const { userId } = req.user;
     const createdBy = userId;
-    
+
 
 
 // household-food survey
