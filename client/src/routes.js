@@ -1,5 +1,6 @@
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
+import TableList from './components/TableList';
 import Maps from "./components/Maps";
 
 const dashboardRoutes = [
@@ -28,6 +29,14 @@ const dashboardRoutes = [
       component: "Maps"
 
     },
+    {
+      id : 4,
+      path: "/surveys",
+      name: "Surveys",
+      icon :"nc-icon nc-chart-pie-35",
+      component:TableList
+    },
+
   ];
 
   export default dashboardRoutes;

@@ -8,7 +8,7 @@ import routes from '../routes.js'
 import Maps from "../components/Maps";
 import Profile from "../components/Profile";
 import Dashboard from "../components/Dashboard";
-
+import TableList from "../components/TableList";
 
 
 function Admin() {
@@ -43,6 +43,7 @@ function Admin() {
                 <Route path = "dashboard" element  = {<Dashboard />}/>
                 <Route path = "profile" element  = {<Profile />}/>
                 <Route path = "maps" element  = {<Maps />}/>
+                <Route path = "surveys" element = {<TableList /> }/>
                 </Routes>
             </div>
             {/* <Footer /> */}

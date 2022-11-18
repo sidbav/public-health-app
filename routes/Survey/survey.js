@@ -4,6 +4,7 @@ import express from 'express'
 import SurveyTypeOne from '../../models/SurveyTypeOne.js'
 import SurveyTypeFour from '../../models/SurveyTypeFour.js'
 import auth from '../../middlewares/auth.js';
+import { StatusCodes } from 'http-status-codes';
 
 
 // controller for survey
@@ -14,13 +15,9 @@ router.post('/api/v1/survey',auth,async (req,res) =>{
     const surveyDate = new Date();
     const dateOrder = surveyDate.getTime();
 
-
-
     const { type } = req.body.result
     const { userId } = req.user;
     const createdBy = userId;
-
-
 
 // household-food survey
     if(type == 'household-food'){
@@ -116,4 +113,19 @@ router.post('/api/v1/survey',auth,async (req,res) =>{
 
 
 )
+
+router.get('/api/v1/surveys' , auth ,async (req,res) => {
+
+    // Extract userId from the request.user
+    const { userId } = req.user;
+    // query
+    const surveyOneResult  = await SurveyTypeOne.find({createdBy: userId},'type surveyResult surveyDate dateOrder')
+    const surveyFourResult = await SurveyTypeFour.find({createdBy: userId} ,'type surveyResult surveyDate dateOrder');
+    const surveyReturn =  surveyOneResult.concat(surveyFourResult);
+
+    res.status(201).json({surveyReturn});
+
+
+
+})
 export {router as SurveryRouter}
