@@ -9,7 +9,7 @@ import { SignupRouter } from './routes/Auth/signup.js'
 import { SurveryRouter } from './routes/Survey/survey.js'
 import { passwordResetRouter } from './routes/Auth/passwordReset.js'
 
-import auth from './middlewares/auth.js'
+
 // run the router
 const app = express()
 app.use(cors())

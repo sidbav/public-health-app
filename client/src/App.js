@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard';
 import AdminNavbar from './components/AdminNavbar.jsx';
 import Maps from './components/Maps';
 import Surveyone from './components/Surveyone';
+import TableList from './components/TableList';
 
 import Admin from './layouts/Admin.jsx'
 
@@ -33,6 +34,7 @@ function App() {
               <Route path = "/dashboard" element  = {<Dashboard />}/>
               <Route path = "/profile" element  = {<Profile />}/>
               <Route path = "/maps" element  = {<Maps /> }/>
+              <Route path = "/surveys" element  = {<TableList />} />
           </Route>
 
           <Route path ="/landing"  element = {<Landing/>}/>

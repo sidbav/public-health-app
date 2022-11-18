@@ -98,13 +98,10 @@ const Surveyone = ({token, logout}) => {
             return response
           },
           (error) => {
-            if (error.response.status == 401){
+            if (error.response.status === 401){
                 // logout user if
                 logout();
                 navigate('/profile');
-
-
-
             }
             return Promise.reject(error);
           }
@@ -114,16 +111,16 @@ const Surveyone = ({token, logout}) => {
 
         //const response = await axios.post('/api/v1/survey' , {result})
         const response = await authFetch.post('/survey',{result});
-
-
-
+        setTimeout(() => {
+          navigate('/profile')
+        }, 2000);
         console.log(response);
 
     },
   )
 
   survey.onComplete.add(surveyComplete);
-  navigate('/profile');
+
 
   return <Survey model={survey} />;
 }
