@@ -29,7 +29,7 @@ function GoogleSignin() {
 
     return (
         <div>
-            <h2>React Google Login</h2>
+            <h2>Public Health App Google Login</h2>
             <br />
             <br />
             {profile ? (
