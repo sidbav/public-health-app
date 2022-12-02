@@ -13,6 +13,7 @@ import AdminNavbar from './components/AdminNavbar.jsx';
 import MapSection from './components/GoogleMaps/Map.jsx' // this is for MapSection
 import Surveyone from './components/Surveyone';
 import TableList from './components/TableList';
+import GoogleSignin from './components/GoogleSignin';
 
 import Admin from './layouts/Admin.jsx'
 
@@ -25,11 +26,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 // do not delete this variable
-// const location = {
-//   address: 'Baylor Scott & White Medical Center – College Station',
-//   lat:30.58254420899421,
-//   lng:-96.27917886514233
-// };
+const location = {
+  address: 'Baylor Scott & White Medical Center – College Station',
+  lat:30.58254420899421,
+  lng:-96.27917886514233
+};
 
 
 // include this to the App function
@@ -47,12 +48,13 @@ function App() {
               <Route path = "/dashboard" element  = {<Dashboard />}/>
               <Route path = "/profile" element  = {<Profile />}/>
               <Route path = "/surveys" element  = {<TableList />} />
+              <Route path = "/maps"    element = {<MapSection zoomLevel = {15} location={location}/>}/>
           </Route>
 
           <Route path ="/landing"  element = {<Landing/>}/>
-          <Route path="/register" element= {<Register/>}/>
-          <Route path="/surveyone" element= {<Surveyone/>}/>
-
+          <Route path="/register"  element = {<Register/>}/>
+          <Route path="/surveyone" element = {<Surveyone/>}/>
+          <Route path ="/signin"    element = {<GoogleSignin/>} />
         </Routes>
       </BrowserRouter>
   );

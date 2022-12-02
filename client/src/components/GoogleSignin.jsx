@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { gapi } from 'gapi-script';
 
-function GoogleSignin() {
+const  GoogleSignin = () => {
     const [ profile, setProfile ] = useState([]);
     const clientId = '9139827708-7movl6pt02m4j8idvtl219f34ntp18sl.apps.googleusercontent.com';
     useEffect(() => {
