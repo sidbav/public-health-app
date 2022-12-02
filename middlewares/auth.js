@@ -7,7 +7,6 @@ const auth = async (req,res,next) => {
 
     // To extract the jwt from the header
     const authHeader = req.headers.authorization
-    console.log('req.headers.authorization');
     if (!authHeader || !authHeader.startsWith('Bearer')){
         throw new UnthenticatedError('Authentication Invalid1')
     }
@@ -18,8 +17,6 @@ const auth = async (req,res,next) => {
     try {
         const payload = jwt.verify(token, process.env.JWT_SECRET)
         req.user = {userId : payload.userId}
-        console.log('here');
-        console.log(req.user.userId);
         next()
 
     } catch (error) {
