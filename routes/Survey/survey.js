@@ -4,7 +4,6 @@ import express from 'express'
 import SurveyTypeOne from '../../models/SurveyTypeOne.js'
 import SurveyTypeFour from '../../models/SurveyTypeFour.js'
 import auth from '../../middlewares/auth.js';
-
 import { StatusCodes } from 'http-status-codes';
 
 
@@ -21,7 +20,7 @@ router.post('/api/v1/survey',auth,async (req,res) =>{
     const createdBy = userId;
 
 // household-food survey
-    if(type == 'household-food'){
+    if(type == 'household-food'||type == 'household-food-chinese'||type == 'household-food-spanish' || type == 'short-survey' || type == 'adult-food'){
         const {HH1, HH2, HH3,HH4,AD1,AD1a,AD2,AD3,AD4,AD5,AD5a,CH1,CH2,CH3,CH4,CH5,CH5a,CH6,CH7,bool_children} = req.body.result
 
         for(var itemname in req.body.result){
@@ -36,7 +35,7 @@ router.post('/api/v1/survey',auth,async (req,res) =>{
             }
         }
 
-        if(bool_children == false) {
+        if(bool_children == false || type == 'adult-food') {
             switch(true){
                 case (score==0) :
                 surveyResult = 'High food security'
@@ -52,7 +51,7 @@ router.post('/api/v1/survey',auth,async (req,res) =>{
                         break
             }
         }
-        else {
+        else if(bool_children == true) {
             switch(true){
                 case (score==0) :
                 surveyResult = 'High food security'
@@ -64,6 +63,23 @@ router.post('/api/v1/survey',auth,async (req,res) =>{
                 surveyResult = 'Low food security'
                         break
                 case(score >= 8 && score <= 18):
+                surveyResult = 'Very low food security'
+                        break
+            }
+        }
+
+        if(type == 'short-survey') {
+            switch(true){
+                case (score==0) :
+                surveyResult = 'High food security'
+                        break
+                case (score==1) :
+                surveyResult = 'Marginal food security'
+                        break
+                case (score >= 2 && score <= 4):
+                surveyResult = 'Low food security'
+                        break
+                case(score >= 5 && score <= 6):
                 surveyResult = 'Very low food security'
                         break
             }

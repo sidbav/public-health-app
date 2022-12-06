@@ -6,7 +6,7 @@ import "./Registerpage.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
-
+import GoogleSignin from "../components/GoogleSignin";
 // Redux
 import {connect} from 'react-redux'
 import { register, login ,clearError} from "../redux/actions/auth";
@@ -172,6 +172,11 @@ const toggleMember = ()=>{
     }
 
   }
+
+
+
+
+
   return (
     <Container id = "main-container" className="d-grid h-100">
       <Form id="register-form"  className="mt-4" onSubmit={handleonSubmit}>
@@ -327,6 +332,7 @@ const toggleMember = ()=>{
                     >
                       {newUser.isMember? 'Register' : 'Login'}
 
+
                     </button>
                     {/* Already have an account? <Link>Login</Link> */}
                   </span>
@@ -354,6 +360,8 @@ const mapStateToProps = (state) => {
     }
 
 }
+
+
 
 export default connect(mapStateToProps,{register,login, clearError})(Register);
 
