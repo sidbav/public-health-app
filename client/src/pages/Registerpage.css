@@ -2,8 +2,9 @@
 
 #main-container {
     place-items : center center;
-    background: linear-gradient(79deg, #bdb2d3,#dfbedb,#eeceb7)  ;
+    background: #fcfcfc ;
     max-width: 1430px;
+    
 }
 
 #register-form {
@@ -14,7 +15,7 @@
 body {
   display: grid;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #f9f9fb;
 }
 
 .member-btn{
