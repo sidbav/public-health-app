@@ -175,10 +175,8 @@ const toggleMember = ()=>{
 
 
 
-
-
   return (
-    <Container id = "main-container" className="d-grid h-100">
+    <Container id = "main-container" className="d-grid h-100" >
       <Form id="register-form"  className="mt-4" onSubmit={handleonSubmit}>
         <h1 className="mb-3  fw-normal text-center">
           {newUser.isMember? "Public-Health System" : "Please Sign Up"}
@@ -319,7 +317,7 @@ const toggleMember = ()=>{
             </ul>
           </Form.Group>
           }
-          <Button variant="primary" type="submit" className="w-100" disabled={(Object.values(newPassWordWrong).includes(false))&&!newUser.isMember}>
+          <Button variant="outline-primary" type="submit" className="w-100" disabled={(Object.values(newPassWordWrong).includes(false))&&!newUser.isMember}>
             {!newUser.isMember? "Sign up": "Log in" }
           </Button>
       </Form>
