@@ -1,5 +1,4 @@
 import React from "react";
-import ChartistGraph from "react-chartist";
 import { Link } from "react-router-dom";
 // react-bootstrap components
 import {
@@ -234,7 +233,7 @@ function Dashboard() {
                             >
                               <i className="fas fa-times"></i>
                             </Button>
-                          </OverlayTrigger> 
+                          </OverlayTrigger>
                         </td>
                       </tr> */}
                       <tr>

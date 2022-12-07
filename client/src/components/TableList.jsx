@@ -21,7 +21,7 @@ import {
 function TableList({getAllSurveys,surveys}) {
   useEffect(()=>{
       getAllSurveys();
-  },[surveys])
+  },[])
 
   const renderList = () => {
 
