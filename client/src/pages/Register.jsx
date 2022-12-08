@@ -178,8 +178,14 @@ const toggleMember = ()=>{
   return (
     <Container id = "main-container" className="d-grid h-100" >
       <Form id="register-form"  className="mt-4" onSubmit={handleonSubmit}>
+      
+      <div class="pic_top">
+        <img className="app-logo " 
+              src={require("../assets/img/healthcare1.png")} alt="..."
+               />
+               </div>
         <h1 className="mb-3  fw-normal text-center">
-          {newUser.isMember? "Public-Health System" : "Please Sign Up"}
+          {newUser.isMember? "Public Health" : "Please Sign Up"}
         </h1>
         <hr />
         {
