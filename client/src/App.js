@@ -33,6 +33,7 @@ const location = {
 };
 
 
+
 // include this to the App function
 //{ <MapSection location={location} zoomLevel={15} />  }
 
@@ -56,6 +57,8 @@ function App() {
           <Route path ="/passwordReset" element ={<PasswordReset/>} />
           <Route path="/surveyone" element = {<Surveyone/>}/>
           <Route path ="/signin"    element = {<GoogleSignin/>} />
+          {/* <Route path = "/maps"    element = {<MapSection location={location} zoomLevel={15} />}/> */}
+
         </Routes>
       </BrowserRouter>
   );
