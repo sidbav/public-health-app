@@ -14,7 +14,7 @@ import MapSection from './components/GoogleMaps/Map.jsx' // this is for MapSecti
 import Surveyone from './components/Surveyone';
 import TableList from './components/TableList';
 import GoogleSignin from './components/GoogleSignin';
-
+import PasswordReset from './pages/PasswordReset.jsx';
 import Admin from './layouts/Admin.jsx'
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -53,6 +53,7 @@ function App() {
 
           <Route path ="/landing"  element = {<Landing/>}/>
           <Route path="/register"  element = {<Register/>}/>
+          <Route path ="/passwordReset" element ={<PasswordReset/>} />
           <Route path="/surveyone" element = {<Surveyone/>}/>
           <Route path ="/signin"    element = {<GoogleSignin/>} />
         </Routes>

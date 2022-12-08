@@ -102,6 +102,8 @@ export const logout = () => async (dispatch)=> {
     })
 
 }
+
+
 export const clearError = () => async (dispatch)  => {
     setTimeout(()=>{
         dispatch({type:CLEAR_ERROR})

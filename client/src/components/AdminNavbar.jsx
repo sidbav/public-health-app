@@ -13,7 +13,7 @@ import { logout } from "../redux/actions/auth.js";
 
 
 
-function AdminNavbar({logout}) {
+function AdminNavbar({logout , user}) {
   const location = useLocation();
   const mobileSidebarToggle = (e) => {
     e.preventDefault();
@@ -46,13 +46,13 @@ function AdminNavbar({logout}) {
           >
             <i className="fas fa-ellipsis-v"></i>
           </Button>
-          <Navbar.Brand
+          {/* <Navbar.Brand
             href="#home"
             onClick={(e) => e.preventDefault()}
             className="mr-2"
           >
             {getBrandText()}
-          </Navbar.Brand>
+          </Navbar.Brand> */}
         </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="mr-2">
           <span className="navbar-toggler-bar burger-lines"></span>
@@ -62,15 +62,6 @@ function AdminNavbar({logout}) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="nav mr-auto" navbar>
             <Nav.Item>
-              <Nav.Link
-                data-toggle="dropdown"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                className="m-0"
-              >
-                <i className="nc-icon nc-palette"></i>
-                <span className="d-lg-none ml-1">Dashboard</span>
-              </Nav.Link>
             </Nav.Item>
             {/*<Dropdown as={Nav.Item}>
               <Dropdown.Toggle
@@ -187,6 +178,21 @@ function AdminNavbar({logout}) {
             <Nav.Item>
               <Nav.Link
                 className="m-0"
+                href="/profile"
+
+              >
+
+                <span className="icon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+
+                  {`${user.firstName}`}
+                  </span>
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                className="m-0"
                 href="#"
                 onClick={logout}
               >
@@ -204,7 +210,13 @@ function AdminNavbar({logout}) {
 
 AdminNavbar.propTypes = {
   logout: PropTypes.func.isRequired,
-
+  user: PropTypes.object
 
 }
-export default connect(null , {logout})(AdminNavbar);
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.auth.user
+  }
+}
+export default connect(mapStateToProps , {logout})(AdminNavbar);

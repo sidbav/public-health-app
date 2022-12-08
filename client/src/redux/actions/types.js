@@ -10,6 +10,9 @@ export const LOGOUT = 'LOGOUT';
 export const SHOW_ERROR = "SHOW_ERROR"
 export const CLEAR_ERROR = "CLEAR_ERROR"
 
+export const UPDATE_SUCCESS = 'UPDATE_SUCCESS'
+
+
 
 // Survey
 export const GET_SURVEYS_BEGIN = 'GET_SURVEYS_BEGIN';
