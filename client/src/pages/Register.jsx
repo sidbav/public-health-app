@@ -333,8 +333,30 @@ const toggleMember = ()=>{
 
                     </button>
                     {/* Already have an account? <Link>Login</Link> */}
+
                   </span>
+
+
+
         </div>
+        <div className="d-flex justify-content-center align-items-center ">
+                  <span className="fw-normal">
+                    {newUser.isMember? "Forget password ?": ""}
+                    <button type = "button"
+                      onClick={()=>{navigate("/passwordReset")}}
+                      className = "member-btn"
+                    >
+                      {newUser.isMember? 'Reset password' : ''}
+
+
+                    </button>
+                    {/* Already have an account? <Link>Login</Link> */}
+
+                  </span>
+
+
+        </div>
+
 
     </Container>
   )

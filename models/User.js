@@ -7,10 +7,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        // validate: {
-        //     validator: validator.isEmail,
-        //     message: 'Please provide valid email'
-        // }
     },
     password: {
         type: String,
@@ -36,7 +32,38 @@ const UserSchema = new mongoose.Schema({
     phoneNumber: {
         type: String,
         requried: true
+    },
+
+    address:{
+        type: String,
+        trim: true,
+        require: false,
+        default: "my address"
+    },
+
+    city:{
+        type: String,
+        trim: true,
+        require: false,
+        default: "my city"
+    },
+
+    country:{
+        type: String,
+        trim: true,
+        require: false,
+        default: "my country"
+    },
+
+    zipcode:{
+        type: String,
+        trim : true,
+        requrie: false,
+        default: "my zip code"
     }
+
+
+
 
 },
 {

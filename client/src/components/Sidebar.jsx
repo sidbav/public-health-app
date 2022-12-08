@@ -24,10 +24,10 @@ function Sidebar({ color, image, routes }) {
             className="simple-text logo-mini mx-1"
           >
             <div className="logo-img">
-              <img src={require("../assets/img/reactlogo.png")} alt="..." />
+              <img src={require("../assets/img/healthcare.png")} alt="..." />
             </div>
           </a>
-          <a className="simple-text" href="">
+          <a className="text" style = {{textDecoration: "none"}} href="">
             Public Health
           </a>
         </div>

@@ -8,7 +8,7 @@ import { LoginRouter } from './routes/Auth/login.js'
 import { SignupRouter } from './routes/Auth/signup.js'
 import { SurveryRouter } from './routes/Survey/survey.js'
 import { passwordResetRouter } from './routes/Auth/passwordReset.js'
-
+import { updateUserRouter } from './routes/Auth/updateUser.js'
 
 // run the router
 const app = express()
@@ -18,6 +18,7 @@ app.use(LoginRouter);
 app.use(SignupRouter);
 app.use(SurveryRouter);
 app.use(passwordResetRouter);
+app.use(updateUserRouter);
 app.use(errorHandlerMiddle)
 
 //For deployment only

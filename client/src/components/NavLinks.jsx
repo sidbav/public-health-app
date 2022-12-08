@@ -13,7 +13,7 @@ export const NavLinks = () => {
                         className="nav-link"
                         activeClassName="active"
                     >
-                    <i className={icon} />
+                    
                     <p>{name}</p>
                     </NavLink>
                     </li>
