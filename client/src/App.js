@@ -46,18 +46,21 @@ function App() {
                 <Admin />
             </ProtectedRoute>
           }>
+
               <Route path = "/dashboard" element  = {<Dashboard />}/>
               <Route path = "/profile" element  = {<Profile />}/>
               <Route path = "/surveys" element  = {<TableList />} />
-              <Route path = "/maps"    element = {<MapSection zoomLevel = {15} location={location}/>}/>
+              <Route path = "/maps"     element = {<MapSection/>}/>
+
+
           </Route>
 
-          <Route path ="/landing"  element = {<Landing/>}/>
-          <Route path="/register"  element = {<Register/>}/>
+          <Route path ="/landing"    element = {<Landing/>}/>
+          <Route path="/register"    element = {<Register/>}/>
           <Route path ="/passwordReset" element ={<PasswordReset/>} />
-          <Route path="/surveyone" element = {<Surveyone/>}/>
-          <Route path ="/signin"    element = {<GoogleSignin/>} />
-          {/* <Route path = "/maps"    element = {<MapSection location={location} zoomLevel={15} />}/> */}
+          <Route path="/surveyone"   element = {<Surveyone/>}/>
+          <Route path ="/signin"     element = {<GoogleSignin/>} />
+          {/* <Route path = "/maps"      element = {<MapSection location={location} zoomLevel={15} />}/> */}
 
         </Routes>
       </BrowserRouter>
