@@ -5,7 +5,7 @@ import sidebarImage from '../assets/img/sidebar-2.jpg'
 import Sidebar from "../components/Sidebar";
 import routes from '../routes.js'
 
-import Maps from "../components/Maps";
+import MapSection from '../components/GoogleMaps/Map.jsx'
 import Profile from "../components/Profile";
 import Dashboard from "../components/Dashboard";
 import TableList from "../components/TableList";
@@ -42,8 +42,8 @@ function Admin() {
                 <Routes>
                 <Route path = "dashboard" element  = {<Dashboard />}/>
                 <Route path = "profile" element  = {<Profile />}/>
-                <Route path = "maps" element  = {<Maps />}/>
                 <Route path = "surveys" element = {<TableList /> }/>
+                <Route path = "/maps"    element = { <MapSection/>}/>
                 </Routes>
             </div>
             {/* <Footer /> */}

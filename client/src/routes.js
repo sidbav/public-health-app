@@ -1,7 +1,8 @@
+import MapSection from './components/GoogleMaps/Map.jsx'
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
-import TableList from './components/TableList';
-import Maps from "./components/Maps";
+import TableList from './components/TableList';;
+
 
 const dashboardRoutes = [
 
@@ -26,7 +27,7 @@ const dashboardRoutes = [
       path: "/maps",
       name: "Maps",
       icon: "nc-icon nc-pin-3",
-      component: "Maps"
+      component: MapSection
 
     },
     {
