@@ -30,7 +30,16 @@ const limiter = rateLimit({
 app.use(cors())
 app.use(express.json());
 app.use(limiter);
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            "frame-ancestors": ["'self'", "*.google.com/"],
+            frameSrc: ["'self'", "*.google.com/"],
+            childSrc: ["'self'", "*.google.com/"]
+        }
+    },
+    // crossOriginEmbedderPolicy: false
+}));
 
 app.use(LoginRouter);
 app.use(SignupRouter);
