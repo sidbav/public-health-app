@@ -20,6 +20,8 @@ const port = process.env.PORT || 5001
 
 
 
+
+
 const start = async () => {
     await connectDB(process.env.MONGO_URL);
 }
@@ -30,7 +32,6 @@ app.get('*' , (req,res)=>{
     res.sendFile(path.resolve(__dirname ,'./client/build','index.html'))
 })
 
-console.log('test')
 
 
 

@@ -3,9 +3,6 @@ import User from '../../models/User.js'
 import dotenv from 'dotenv'
 import ValidationError from '../../errors/validation-error.js'
 import { StatusCodes } from 'http-status-codes'
-
-
-
 import crypto from 'crypto';
 import bcryptjs from 'bcryptjs';
 
@@ -22,56 +19,6 @@ router.post('/api/v1/auth/passwordReset', async (req, res) => {
         throw new ValidationError("Email does not exist. Please register first");
     }
 
-    // let token = await Token.findOne({ userId: user._id });
-    // if (token) await token.deleteOne();
-
-    // let resetToken = crypto.randomBytes(32).toString("hex");
-    // const hash = await bcryptjs.hash(resetToken, 10);
-
-    // await new Token({
-    //   userId: user._id,yeyuhao1234@tamu.edu
-    //   token: hash,
-    //   createdAt: Date.now(),
-    // }).save();
-
-    // send email to user with the token
-    // let transporter = nodemailer.createTransport({
-    //     service: 'gmail',
-    //     auth: {
-    //       user: process.env.EMAIL_USERNAME, // your email address
-    //       pass: process.env.EMAIL_PASSWORD, // your password
-    //     },
-    //   });
-
-    // const mailOptions = {
-    //     from: 'your email address',
-    //     to: email,
-    //     subject: 'Password Reset Request',
-    //     html: `
-    //     <html >
-    //     <head>
-    //         <meta charset="utf-8">
-    //      </head>
-    //     <body>
-    //         <p><h3>Hi ${user.firstName},</h3></p>
-    //         <p>You requested to reset your password.</p>
-    //         <p> Please, click the link below to reset your password</p>
-    //         <p><a href="${link}">Reset Password</a></p>
-    //     </body>
-    //     </html>`
-    // };
-
-    // transporter.sendMail(mailOptions, function(error, info){
-    //     if (error) {
-    //    console.log(error);
-    //    callback(error);
-    //     } else {
-    //       // do something useful
-    //       res.status(StatusCodes.CREATED).json({
-    //         message: " Reset Email sent",
-    //         });
-    //     }
-    // });
 
     // // check if new password is the same as the old password
 

@@ -5,8 +5,6 @@ import Button from "react-bootstrap/Button";
 import "./Registerpage.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
-import axios from 'axios';
-import GoogleSignin from "../components/GoogleSignin";
 // Redux
 import {connect} from 'react-redux'
 import { register, login ,clearError} from "../redux/actions/auth";
@@ -178,9 +176,9 @@ const toggleMember = ()=>{
   return (
     <Container id = "main-container" className="d-grid h-100" >
       <Form id="register-form"  className="mt-4" onSubmit={handleonSubmit}>
-      
+
       <div class="pic_top">
-        <img className="app-logo " 
+        <img className="app-logo "
               src={require("../assets/img/healthcare1.png")} alt="..."
                />
                </div>

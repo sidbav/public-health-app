@@ -20,6 +20,7 @@ const Mapsection = () => {
   };
   const zoomLevel = 15;
 
+
   return (
      <div className="map">
 
@@ -43,29 +44,5 @@ const Mapsection = () => {
 
 }
 
-
-
-// const Mapsection = ({ location, zoomLevel }) => (
-//     =
-
-//     // <div className="map">
-
-//     //   <h2 className="map-h2">Resources Redommendation</h2>
-
-//     //   <div className="google-map">
-//     //     <GoogleMapReact
-//     //       bootstrapURLKeys={{ key: 'AIzaSyCtPKCgdO1_r_KrOnha4o9ij_oeyotq-_A' }}
-//     //       defaultCenter={location}
-//     //       defaultZoom={zoomLevel}
-//     //     >
-//     //       <LocationPin
-//     //         lat={location.lat}
-//     //         lng={location.lng}
-//     //         text={location.address}
-//     //       />
-//     //     </GoogleMapReact>
-//     //   </div>
-//     // </div>
-// );
 
 export default Mapsection
