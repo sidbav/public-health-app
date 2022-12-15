@@ -38,7 +38,7 @@ app.use(helmet({
             childSrc: ["'self'", "*.google.com/"]
         }
     },
-    // crossOriginEmbedderPolicy: false
+    crossOriginEmbedderPolicy: false
 }));
 
 app.use(LoginRouter);
