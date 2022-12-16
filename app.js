@@ -30,6 +30,7 @@ const limiter = rateLimit({
 app.use(cors())
 app.use(express.json());
 app.use(limiter);
+// helmet temporary work for the public health.
 // app.use(helmet({
 //     contentSecurityPolicy: {
 //         directives: {
