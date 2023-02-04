@@ -1,3 +1,30 @@
+# Installation
+```sh
+git clone git@github.com:sidbav/public-health-app.git
+cd public-health-app
+npm install --force
+cd client && npm install --force
+```
+
+# Running App
+To start the client (frontend)
+```sh
+cd client && npm start
+```
+
+To start the server (backend)
+```sh
+npm start
+```
+
+Currently unable to run the app locally from what I am able to tell, there used to be a `.env` file, but that no longer exists (nor was there an example `.env` file), thus we will need to recreate it from scratch.
+If we reach out to the previous team probably can get access to it. Gaining access will definitely make it easier to use.
+
+# Questions/Tasks specifically regarding the repo
+ - [ ] Get access to or recreate .env file
+ - [ ] MongoDB, are we able to get access to the team's database, or do we need to recreate the database instance?
+ - [ ] Are we able to access their heroku instance, does Jonathan have access to that?
+______
 # Here is the link to our website:
 URL: https://publichealthapp.herokuapp.com/register
 
